@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="RC-08281.eCommerceSalesDMStaging"
+  DTS:DTSID="{93825664-0C99-4A15-9C87-F7F09AF28E7C}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=RC-08281;Initial Catalog=eCommerceSalesDMStaging;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-eCommerce_LoadStaging-{93825664-0C99-4A15-9C87-F7F09AF28E7C}RC-08281.eCommerceSalesDMStaging;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
