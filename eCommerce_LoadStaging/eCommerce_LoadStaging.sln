@@ -7,6 +7,10 @@ Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "eCommerce_LoadStaging", "eC
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "eCommerceStaging", "..\eCommerceStaging\eCommerceStaging.sqlproj", "{E1BBF83F-82E8-4CCB-A15F-BB99E53D732D}"
 EndProject
+Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "eCommerceLoadDM", "..\eCommerceLoadDM\eCommerceLoadDM.dtproj", "{FA754426-56E5-D9BB-25AD-971AF71D2B06}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "eCommerceDM", "..\eCommerceDM\eCommerceDM.sqlproj", "{89D87DD1-0042-4324-8018-D913B19392E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,21 @@ Global
 		{E1BBF83F-82E8-4CCB-A15F-BB99E53D732D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1BBF83F-82E8-4CCB-A15F-BB99E53D732D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E1BBF83F-82E8-4CCB-A15F-BB99E53D732D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FA754426-56E5-D9BB-25AD-971AF71D2B06}.Debug|Any CPU.ActiveCfg = Development
+		{FA754426-56E5-D9BB-25AD-971AF71D2B06}.Debug|Any CPU.Build.0 = Development
+		{FA754426-56E5-D9BB-25AD-971AF71D2B06}.Development|Any CPU.ActiveCfg = Development
+		{FA754426-56E5-D9BB-25AD-971AF71D2B06}.Development|Any CPU.Build.0 = Development
+		{FA754426-56E5-D9BB-25AD-971AF71D2B06}.Release|Any CPU.ActiveCfg = Development
+		{FA754426-56E5-D9BB-25AD-971AF71D2B06}.Release|Any CPU.Build.0 = Development
+		{89D87DD1-0042-4324-8018-D913B19392E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89D87DD1-0042-4324-8018-D913B19392E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89D87DD1-0042-4324-8018-D913B19392E6}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{89D87DD1-0042-4324-8018-D913B19392E6}.Development|Any CPU.ActiveCfg = Release|Any CPU
+		{89D87DD1-0042-4324-8018-D913B19392E6}.Development|Any CPU.Build.0 = Release|Any CPU
+		{89D87DD1-0042-4324-8018-D913B19392E6}.Development|Any CPU.Deploy.0 = Release|Any CPU
+		{89D87DD1-0042-4324-8018-D913B19392E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89D87DD1-0042-4324-8018-D913B19392E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89D87DD1-0042-4324-8018-D913B19392E6}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
