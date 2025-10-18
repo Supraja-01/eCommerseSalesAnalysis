@@ -2,9 +2,5 @@ C:\eCommerceSales\eCommerceDM\bin\Release\eCommerceDM.dacpac
 C:\eCommerceSales\eCommerceDM\bin\Release\eCommerceDM.dll
 C:\eCommerceSales\eCommerceDM\bin\Release\eCommerceDM.pdb
 C:\eCommerceSales\eCommerceDM\obj\Release\eCommerceDM.sqlproj.AssemblyReference.cache
-C:\eCommerceSales\eCommerceDM\obj\Release\Model.xml
-C:\eCommerceSales\eCommerceDM\obj\Release\refactor.xml
-C:\eCommerceSales\eCommerceDM\obj\Release\postdeploy.sql
-C:\eCommerceSales\eCommerceDM\obj\Release\predeploy.sql
 C:\eCommerceSales\eCommerceDM\obj\Release\eCommerceDM.dll
 C:\eCommerceSales\eCommerceDM\obj\Release\eCommerceDM.pdb
