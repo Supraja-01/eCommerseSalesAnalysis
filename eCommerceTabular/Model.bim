@@ -130,24 +130,6 @@
         "name": "vw_SalesVsTargetOverview",
         "columns": [
           {
-            "name": "OrderId",
-            "dataType": "string",
-            "sourceColumn": "OrderId",
-            "sourceProviderType": "Char"
-          },
-          {
-            "name": "DateKey",
-            "dataType": "int64",
-            "sourceColumn": "DateKey",
-            "sourceProviderType": "Integer"
-          },
-          {
-            "name": "ProductKey",
-            "dataType": "int64",
-            "sourceColumn": "ProductKey",
-            "sourceProviderType": "Integer"
-          },
-          {
             "name": "OrderDate",
             "dataType": "string",
             "sourceColumn": "OrderDate",

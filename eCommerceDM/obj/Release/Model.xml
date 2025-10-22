@@ -633,6 +633,437 @@ BEGIN
 				<Property Name="HeaderContents" Value="CREATE   PROCEDURE dbo.usp_PopulateFactSalesTarget&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
+		<Element Type="SqlView" Name="[dbo].[vw_ProfitAnalysisByCategory]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+SELECT 
+    dd.DateKey,
+    dp.ProductKey,
+    dg.GeographyKey,
+    dp.Category,
+    dp.SubCategory,
+    dd.SaleYear AS [Year],
+    dd.SaleMonthName AS [Month],
+    dg.State,
+    dg.City,
+    SUM(fs.Amount) AS TotalSales,
+    SUM(fs.Profit) AS TotalProfit,
+    SUM(fs.Quantity) AS TotalQuantity,
+    ROUND(
+        CASE WHEN SUM(fs.Amount) > 0 
+             THEN (SUM(fs.Profit) * 100.0 / SUM(fs.Amount)) 
+             ELSE 0 END, 2
+    ) AS ProfitMarginPercent
+FROM Fact.FactSales fs
+INNER JOIN Dim.DimDate dd 
+    ON fs.DateKey = dd.DateKey
+INNER JOIN Dim.DimProduct dp 
+    ON fs.ProductKey = dp.ProductKey
+INNER JOIN Dim.DimGeography dg 
+    ON fs.GeographyKey = dg.GeographyKey
+GROUP BY 
+    dd.DateKey, dd.SaleYear, dd.SaleMonthName,
+    dp.ProductKey, dp.Category, dp.SubCategory,
+    dg.GeographyKey,  dg.State, dg.City]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_ProfitAnalysisByCategory].[DateKey]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimDate].[dateKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_ProfitAnalysisByCategory].[ProductKey]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimProduct].[ProductKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_ProfitAnalysisByCategory].[GeographyKey]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimGeography].[GeographyKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_ProfitAnalysisByCategory].[Category]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimProduct].[Category]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_ProfitAnalysisByCategory].[SubCategory]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimProduct].[subCategory]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_ProfitAnalysisByCategory].[Year]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimDate].[saleYear]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_ProfitAnalysisByCategory].[Month]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimDate].[saleMonthName]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_ProfitAnalysisByCategory].[State]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimGeography].[State]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_ProfitAnalysisByCategory].[City]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimGeography].[City]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_ProfitAnalysisByCategory].[TotalSales]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_ProfitAnalysisByCategory].[TotalProfit]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_ProfitAnalysisByCategory].[TotalQuantity]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_ProfitAnalysisByCategory].[ProfitMarginPercent]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[Fact].[factSales]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSales].[dateKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[dateKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimProduct]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSales].[productKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimProduct].[ProductKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimGeography]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSales].[GeographyKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimGeography].[GeographyKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[dateKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimProduct].[ProductKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimProduct].[Category]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimProduct].[subCategory]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[saleYear]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[saleMonthName]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimGeography].[State]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimGeography].[City]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSales].[Amount]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSales].[Profit]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSales].[Quantity]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[saleYear]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[saleMonthName]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="907" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE   VIEW dbo.vw_ProfitAnalysisByCategory&#xD;&#xA;AS" />
+				<Property Name="FooterContents" Value=";" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[vw_SalesVsTargetOverview]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+SELECT 
+    dd.fullDate AS [Order Date],
+    dd.saleYear AS [Year],
+    dd.saleMonthName AS [Month],
+    dg.State,
+    dg.City,
+    dp.Category,
+    dp.SubCategory,
+    SUM(fs.Amount) AS ActualSales,
+    SUM(fs.Profit) AS TotalProfit,
+    SUM(fs.Quantity) AS TotalQuantity,
+    SUM(fst.Target) AS TargetSales,
+    CASE 
+        WHEN SUM(fst.Target) > 0 THEN 
+            (SUM(fs.Amount) * 100.0 / SUM(fst.Target))
+        ELSE 0 
+    END AS AchievementPercent
+FROM Fact.factSales fs
+INNER JOIN Dim.dimDate dd 
+    ON fs.dateKey = dd.dateKey
+INNER JOIN Dim.dimProduct dp 
+    ON fs.productKey = dp.productKey
+INNER JOIN Dim.dimGeography dg 
+    ON fs.geographyKey = dg.geographyKey
+LEFT JOIN Fact.factSalesTarget fst
+    ON dd.dateKey = fst.dateKey 
+    AND dp.productKey = fst.productKey
+GROUP BY 
+    dd.fullDate, dd.saleYear, dd.saleMonthName,
+    dg.State, dg.City,
+    dp.Category, dp.SubCategory
+Having SUM(fst.Target) is not NULL]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_SalesVsTargetOverview].[Order Date]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimDate].[fullDate]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_SalesVsTargetOverview].[Year]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimDate].[saleYear]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_SalesVsTargetOverview].[Month]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimDate].[saleMonthName]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_SalesVsTargetOverview].[State]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimGeography].[State]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_SalesVsTargetOverview].[City]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimGeography].[City]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_SalesVsTargetOverview].[Category]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimProduct].[Category]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_SalesVsTargetOverview].[SubCategory]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimProduct].[subCategory]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_SalesVsTargetOverview].[ActualSales]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_SalesVsTargetOverview].[TotalProfit]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_SalesVsTargetOverview].[TotalQuantity]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_SalesVsTargetOverview].[TargetSales]" />
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_SalesVsTargetOverview].[AchievementPercent]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[Fact].[factSales]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSales].[dateKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[dateKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimProduct]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSales].[productKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimProduct].[ProductKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimGeography]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSales].[GeographyKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimGeography].[GeographyKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesTarget]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[dateKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesTarget].[dateKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimProduct].[ProductKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesTarget].[ProductKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[fullDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[saleYear]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[saleMonthName]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimGeography].[State]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimGeography].[City]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimProduct].[Category]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimProduct].[subCategory]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSales].[Amount]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSales].[Profit]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSales].[Quantity]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesTarget].[Target]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[fullDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[saleYear]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[saleMonthName]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1014" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE   VIEW dbo.vw_SalesVsTargetOverview&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
 		<Element Type="SqlSchema" Name="[Dim]">
 			<Relationship Name="Authorizer">
 				<Entry>

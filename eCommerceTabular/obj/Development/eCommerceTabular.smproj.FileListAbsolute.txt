@@ -1,0 +1,8 @@
+C:\eCommerceSales\eCommerceTabular\bin\Model.asdatabase
+C:\eCommerceSales\eCommerceTabular\bin\Model.deploymenttargets
+C:\eCommerceSales\eCommerceTabular\bin\Model.deploymentoptions
+C:\eCommerceSales\eCommerceTabular\obj\Development\eCommerceTabular.smproj.AssemblyReference.cache
+C:\eCommerceSales\eCommerceTabular\obj\Development\eCommerceTabular.smproj.CoreCompileInputs.cache
+C:\eCommerceSales\eCommerceTabular\obj\Development\Model.asdatabase
+C:\eCommerceSales\eCommerceTabular\obj\Development\Model.deploymentoptions
+C:\eCommerceSales\eCommerceTabular\obj\Development\Model.deploymenttargets

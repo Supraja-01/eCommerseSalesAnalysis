@@ -65,6 +65,7 @@
     <Folder Include="dbo\" />
     <Folder Include="dbo\Stored Procedures\" />
     <Folder Include="Security\" />
+    <Folder Include="dbo\Views\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Dim\Tables\dimCustomer.sql" />
@@ -81,5 +82,7 @@
     <Build Include="dbo\Stored Procedures\usp_PopulateFactSalesTarget.sql" />
     <Build Include="Security\Dim.sql" />
     <Build Include="Security\Fact.sql" />
+    <Build Include="dbo\Views\vw_SalesVsTargetOverview.sql" />
+    <Build Include="dbo\Views\vw_ProfitAnalysisByCategory.sql" />
   </ItemGroup>
 </Project>
