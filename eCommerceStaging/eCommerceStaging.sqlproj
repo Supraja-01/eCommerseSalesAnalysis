@@ -61,9 +61,9 @@
     <Folder Include="Security\" />
   </ItemGroup>
   <ItemGroup>
+    <Build Include="Security\sales_1.sql" />
     <Build Include="sales\Tables\salesTarget_1.sql" />
     <Build Include="sales\Tables\orderDetails_1.sql" />
     <Build Include="sales\Tables\listOfOrders_1.sql" />
-    <Build Include="Security\sales_1.sql" />
   </ItemGroup>
 </Project>
