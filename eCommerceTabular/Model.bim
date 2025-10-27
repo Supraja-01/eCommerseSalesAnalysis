@@ -256,6 +256,12 @@
             "sourceProviderType": "Integer"
           },
           {
+            "name": "Salekey",
+            "dataType": "int64",
+            "sourceColumn": "Salekey",
+            "sourceProviderType": "Integer"
+          },
+          {
             "name": "totalTarget",
             "dataType": "int64",
             "sourceColumn": "totalTarget",
@@ -287,6 +293,36 @@
             "value": "dbo"
           }
         ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "1e74df3b-0070-485a-a19b-63e8cf39bdd5",
+        "fromTable": "vw_Sales",
+        "fromColumn": "productkey",
+        "toTable": "vw_categories",
+        "toColumn": "productkey"
+      },
+      {
+        "name": "a30ec482-61ea-437c-93e1-39c3dbac0b6e",
+        "fromTable": "vw_Sales",
+        "fromColumn": "datekey",
+        "toTable": "vw_date",
+        "toColumn": "datekey"
+      },
+      {
+        "name": "35121cde-e013-47f6-9938-889956d63d75",
+        "fromTable": "vw_Sales",
+        "fromColumn": "geographykey",
+        "toTable": "vw_geography",
+        "toColumn": "geographykey"
+      },
+      {
+        "name": "61a7c928-539e-4260-9f3c-be92fa572ac8",
+        "fromTable": "vw_Sales",
+        "fromColumn": "salekey",
+        "toTable": "vw_SaleTarget",
+        "toColumn": "Salekey"
       }
     ],
     "annotations": [
