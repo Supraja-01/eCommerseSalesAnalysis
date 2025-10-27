@@ -5,10 +5,10 @@
     "culture": "en-US",
     "dataSources": [
       {
-        "name": "SqlServer RC-08029 eCommerceSalesDM",
+        "name": "SqlServer RC-08029 eCommerceSalesDM 2",
         "connectionString": "Provider=SQLOLEDB;Data Source=RC-08029;Initial Catalog=eCommerceSalesDM;Integrated Security=SSPI;Persist Security Info=false",
         "impersonationMode": "impersonateAccount",
-        "account": "RARECREW\\suprajabommisetty",
+        "account": "RARECREW\\SUPRAJABOMMISETTY",
         "annotations": [
           {
             "name": "ConnectionEditUISource",
@@ -19,106 +19,46 @@
     ],
     "tables": [
       {
-        "name": "vw_ProfitAnalysisByCategory",
+        "name": "vw_categories",
         "columns": [
           {
-            "name": "DateKey",
-            "dataType": "int64",
-            "sourceColumn": "DateKey",
-            "sourceProviderType": "Integer"
-          },
-          {
-            "name": "ProductKey",
-            "dataType": "int64",
-            "sourceColumn": "ProductKey",
-            "sourceProviderType": "Integer"
-          },
-          {
-            "name": "GeographyKey",
-            "dataType": "int64",
-            "sourceColumn": "GeographyKey",
-            "sourceProviderType": "Integer"
-          },
-          {
-            "name": "Category",
+            "name": "productkey",
             "dataType": "string",
-            "sourceColumn": "Category",
+            "sourceColumn": "productkey",
             "sourceProviderType": "Char"
           },
           {
-            "name": "SubCategory",
+            "name": "category",
             "dataType": "string",
-            "sourceColumn": "SubCategory",
+            "sourceColumn": "category",
             "sourceProviderType": "Char"
           },
           {
-            "name": "Year",
-            "dataType": "int64",
-            "sourceColumn": "Year",
-            "sourceProviderType": "SmallInt"
-          },
-          {
-            "name": "Month",
+            "name": "subCategory",
             "dataType": "string",
-            "sourceColumn": "Month",
+            "sourceColumn": "subCategory",
             "sourceProviderType": "Char"
-          },
-          {
-            "name": "State",
-            "dataType": "string",
-            "sourceColumn": "State",
-            "sourceProviderType": "Char"
-          },
-          {
-            "name": "City",
-            "dataType": "string",
-            "sourceColumn": "City",
-            "sourceProviderType": "Char"
-          },
-          {
-            "name": "TotalSales",
-            "dataType": "int64",
-            "sourceColumn": "TotalSales",
-            "sourceProviderType": "Integer"
-          },
-          {
-            "name": "TotalProfit",
-            "dataType": "int64",
-            "sourceColumn": "TotalProfit",
-            "sourceProviderType": "Integer"
-          },
-          {
-            "name": "TotalQuantity",
-            "dataType": "int64",
-            "sourceColumn": "TotalQuantity",
-            "sourceProviderType": "Integer"
-          },
-          {
-            "name": "ProfitMarginPercent",
-            "dataType": "double",
-            "sourceColumn": "ProfitMarginPercent",
-            "sourceProviderType": "Numeric"
           }
         ],
         "partitions": [
           {
-            "name": "vw_ProfitAnalysisByCategory",
+            "name": "vw_categories",
             "dataView": "full",
             "source": {
               "type": "query",
-              "query": " \t\t\t\tSELECT [dbo].[vw_ProfitAnalysisByCategory].*   FROM [dbo].[vw_ProfitAnalysisByCategory] ",
-              "dataSource": "SqlServer RC-08029 eCommerceSalesDM"
+              "query": " \t\t\t\tSELECT [dbo].[vw_categories].*   FROM [dbo].[vw_categories] ",
+              "dataSource": "SqlServer RC-08029 eCommerceSalesDM 2"
             }
           }
         ],
         "annotations": [
           {
             "name": "_TM_ExtProp_QueryDefinition",
-            "value": " \t\t\t\tSELECT [dbo].[vw_ProfitAnalysisByCategory].*   FROM [dbo].[vw_ProfitAnalysisByCategory] "
+            "value": " \t\t\t\tSELECT [dbo].[vw_categories].*   FROM [dbo].[vw_categories] "
           },
           {
             "name": "_TM_ExtProp_DbTableName",
-            "value": "vw_ProfitAnalysisByCategory"
+            "value": "vw_categories"
           },
           {
             "name": "_TM_ExtProp_DbSchemaName",
@@ -127,100 +67,220 @@
         ]
       },
       {
-        "name": "vw_SalesVsTargetOverview",
+        "name": "vw_date",
         "columns": [
           {
-            "name": "OrderDate",
+            "name": "datekey",
+            "dataType": "int64",
+            "sourceColumn": "datekey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "fulldate",
             "dataType": "string",
-            "sourceColumn": "OrderDate",
+            "sourceColumn": "fulldate",
             "sourceProviderType": "WChar"
           },
           {
-            "name": "Year",
+            "name": "saleyear",
             "dataType": "int64",
-            "sourceColumn": "Year",
+            "sourceColumn": "saleyear",
             "sourceProviderType": "SmallInt"
           },
           {
-            "name": "Month",
+            "name": "saleMonthName",
             "dataType": "string",
-            "sourceColumn": "Month",
+            "sourceColumn": "saleMonthName",
             "sourceProviderType": "Char"
-          },
-          {
-            "name": "State",
-            "dataType": "string",
-            "sourceColumn": "State",
-            "sourceProviderType": "Char"
-          },
-          {
-            "name": "City",
-            "dataType": "string",
-            "sourceColumn": "City",
-            "sourceProviderType": "Char"
-          },
-          {
-            "name": "Category",
-            "dataType": "string",
-            "sourceColumn": "Category",
-            "sourceProviderType": "Char"
-          },
-          {
-            "name": "SubCategory",
-            "dataType": "string",
-            "sourceColumn": "SubCategory",
-            "sourceProviderType": "Char"
-          },
-          {
-            "name": "ActualSales",
-            "dataType": "int64",
-            "sourceColumn": "ActualSales",
-            "sourceProviderType": "Integer"
-          },
-          {
-            "name": "TotalProfit",
-            "dataType": "int64",
-            "sourceColumn": "TotalProfit",
-            "sourceProviderType": "Integer"
-          },
-          {
-            "name": "TotalQuantity",
-            "dataType": "int64",
-            "sourceColumn": "TotalQuantity",
-            "sourceProviderType": "Integer"
-          },
-          {
-            "name": "TargetSales",
-            "dataType": "int64",
-            "sourceColumn": "TargetSales",
-            "sourceProviderType": "Integer"
-          },
-          {
-            "name": "AchievementPercent",
-            "dataType": "double",
-            "sourceColumn": "AchievementPercent",
-            "sourceProviderType": "Numeric"
           }
         ],
         "partitions": [
           {
-            "name": "vw_SalesVsTargetOverview",
+            "name": "vw_date",
             "dataView": "full",
             "source": {
               "type": "query",
-              "query": " \t\t\t\tSELECT [dbo].[vw_SalesVsTargetOverview].*   FROM [dbo].[vw_SalesVsTargetOverview] ",
-              "dataSource": "SqlServer RC-08029 eCommerceSalesDM"
+              "query": " \t\t\t\tSELECT [dbo].[vw_date].*   FROM [dbo].[vw_date] ",
+              "dataSource": "SqlServer RC-08029 eCommerceSalesDM 2"
             }
           }
         ],
         "annotations": [
           {
             "name": "_TM_ExtProp_QueryDefinition",
-            "value": " \t\t\t\tSELECT [dbo].[vw_SalesVsTargetOverview].*   FROM [dbo].[vw_SalesVsTargetOverview] "
+            "value": " \t\t\t\tSELECT [dbo].[vw_date].*   FROM [dbo].[vw_date] "
           },
           {
             "name": "_TM_ExtProp_DbTableName",
-            "value": "vw_SalesVsTargetOverview"
+            "value": "vw_date"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "vw_geography",
+        "columns": [
+          {
+            "name": "geographykey",
+            "dataType": "string",
+            "sourceColumn": "geographykey",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "state",
+            "dataType": "string",
+            "sourceColumn": "state",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "city",
+            "dataType": "string",
+            "sourceColumn": "city",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vw_geography",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[vw_geography].*   FROM [dbo].[vw_geography] ",
+              "dataSource": "SqlServer RC-08029 eCommerceSalesDM 2"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[vw_geography].*   FROM [dbo].[vw_geography] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "vw_geography"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "vw_Sales",
+        "columns": [
+          {
+            "name": "salekey",
+            "dataType": "string",
+            "sourceColumn": "salekey",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "geographykey",
+            "dataType": "string",
+            "sourceColumn": "geographykey",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "productkey",
+            "dataType": "string",
+            "sourceColumn": "productkey",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "datekey",
+            "dataType": "int64",
+            "sourceColumn": "datekey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "totalAmount",
+            "dataType": "int64",
+            "sourceColumn": "totalAmount",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "TotalProfit",
+            "dataType": "int64",
+            "sourceColumn": "TotalProfit",
+            "sourceProviderType": "SmallInt"
+          },
+          {
+            "name": "TotalQuantity",
+            "dataType": "int64",
+            "sourceColumn": "TotalQuantity",
+            "sourceProviderType": "UnsignedTinyInt"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vw_Sales",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[vw_Sales].*   FROM [dbo].[vw_Sales] ",
+              "dataSource": "SqlServer RC-08029 eCommerceSalesDM 2"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[vw_Sales].*   FROM [dbo].[vw_Sales] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "vw_Sales"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "vw_SaleTarget",
+        "columns": [
+          {
+            "name": "datekey",
+            "dataType": "int64",
+            "sourceColumn": "datekey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "productkey",
+            "dataType": "int64",
+            "sourceColumn": "productkey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "totalTarget",
+            "dataType": "int64",
+            "sourceColumn": "totalTarget",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vw_SaleTarget",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[vw_SaleTarget].*   FROM [dbo].[vw_SaleTarget] ",
+              "dataSource": "SqlServer RC-08029 eCommerceSalesDM 2"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[vw_SaleTarget].*   FROM [dbo].[vw_SaleTarget] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "vw_SaleTarget"
           },
           {
             "name": "_TM_ExtProp_DbSchemaName",
