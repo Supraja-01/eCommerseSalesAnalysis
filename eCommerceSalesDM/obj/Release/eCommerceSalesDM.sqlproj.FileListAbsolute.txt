@@ -1,0 +1,10 @@
+C:\eCommerceSales\eCommerceSalesDM\bin\Release\eCommerceSalesDM.dacpac
+C:\eCommerceSales\eCommerceSalesDM\bin\Release\eCommerceSalesDM.dll
+C:\eCommerceSales\eCommerceSalesDM\bin\Release\eCommerceSalesDM.pdb
+C:\eCommerceSales\eCommerceSalesDM\obj\Release\eCommerceSalesDM.sqlproj.AssemblyReference.cache
+C:\eCommerceSales\eCommerceSalesDM\obj\Release\Model.xml
+C:\eCommerceSales\eCommerceSalesDM\obj\Release\refactor.xml
+C:\eCommerceSales\eCommerceSalesDM\obj\Release\postdeploy.sql
+C:\eCommerceSales\eCommerceSalesDM\obj\Release\predeploy.sql
+C:\eCommerceSales\eCommerceSalesDM\obj\Release\eCommerceSalesDM.dll
+C:\eCommerceSales\eCommerceSalesDM\obj\Release\eCommerceSalesDM.pdb
