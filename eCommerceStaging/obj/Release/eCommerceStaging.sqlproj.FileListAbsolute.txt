@@ -2,9 +2,9 @@ C:\eCommerceSales\eCommerceStaging\bin\Release\eCommerceStaging.dacpac
 C:\eCommerceSales\eCommerceStaging\bin\Release\eCommerceStaging.dll
 C:\eCommerceSales\eCommerceStaging\bin\Release\eCommerceStaging.pdb
 C:\eCommerceSales\eCommerceStaging\obj\Release\eCommerceStaging.sqlproj.AssemblyReference.cache
-C:\eCommerceSales\eCommerceStaging\obj\Release\eCommerceStaging.dll
-C:\eCommerceSales\eCommerceStaging\obj\Release\eCommerceStaging.pdb
 C:\eCommerceSales\eCommerceStaging\obj\Release\Model.xml
 C:\eCommerceSales\eCommerceStaging\obj\Release\refactor.xml
 C:\eCommerceSales\eCommerceStaging\obj\Release\postdeploy.sql
 C:\eCommerceSales\eCommerceStaging\obj\Release\predeploy.sql
+C:\eCommerceSales\eCommerceStaging\obj\Release\eCommerceStaging.dll
+C:\eCommerceSales\eCommerceStaging\obj\Release\eCommerceStaging.pdb

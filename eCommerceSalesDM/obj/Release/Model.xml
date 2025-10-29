@@ -1,0 +1,2667 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSchemaModel FileFormatVersion="1.2" SchemaVersion="2.9" DspName="Microsoft.Data.Tools.Schema.Sql.Sql160DatabaseSchemaProvider" CollationLcid="1033" CollationCaseSensitive="False" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+	<Header>
+		<CustomData Category="AnsiNulls">
+			<Metadata Name="AnsiNulls" Value="True" />
+		</CustomData>
+		<CustomData Category="QuotedIdentifier">
+			<Metadata Name="QuotedIdentifier" Value="True" />
+		</CustomData>
+		<CustomData Category="CompatibilityMode">
+			<Metadata Name="CompatibilityMode" Value="160" />
+		</CustomData>
+		<CustomData Category="Reference" Type="Assembly">
+			<Metadata Name="LogicalName" Value="eCommerceSalesDM.dll" />
+			<Metadata Name="FileName" Value="C:\ECOMMERCESALES\ECOMMERCESALESDM\OBJ\RELEASE\ECOMMERCESALESDM.DLL" />
+			<Metadata Name="AssemblyName" Value="eCommerceSalesDM" />
+			<Metadata Name="PermissionSet" Value="SAFE" />
+			<Metadata Name="Owner" Value="" />
+			<Metadata Name="GenerateSqlClrDdl" Value="True" />
+			<Metadata Name="IsVisible" Value="True" />
+			<Metadata Name="IsModelAware" Value="True" />
+			<Metadata Name="SkipCreationIfEmpty" Value="True" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\eCommerceSales\eCommerceSalesDM\obj\Release\eCommerceSalesDM.pdb" />
+		</CustomData>
+		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable" />
+	</Header>
+	<Model>
+		<Element Type="SqlDatabaseOptions">
+			<Property Name="Collation" Value="SQL_Latin1_General_CP1_CI_AS" />
+			<Property Name="IsAnsiNullDefaultOn" Value="True" />
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="IsAnsiWarningsOn" Value="True" />
+			<Property Name="IsArithAbortOn" Value="True" />
+			<Property Name="IsConcatNullYieldsNullOn" Value="True" />
+			<Property Name="IsTornPageProtectionOn" Value="False" />
+			<Property Name="IsFullTextEnabled" Value="True" />
+			<Property Name="PageVerifyMode" Value="3" />
+			<Property Name="DefaultLanguage" Value="" />
+			<Property Name="DefaultFullTextLanguage" Value="" />
+			<Property Name="QueryStoreStaleQueryThreshold" Value="367" />
+			<Relationship Name="DefaultFilegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[Dim].[dimDate].[dateKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Dim].[dimDate]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[Dim].[dimCustomer].[customerKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Dim].[dimCustomer]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[Dim].[dimGeography].[GeographyKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Dim].[dimGeography]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[Dim].[dimProduct].[ProductKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Dim].[dimProduct]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[Fact].[factSalesAnalysis].[salekey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[Fact].[factSaleTargets].[targetKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Fact].[factSaleTargets]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[ufn_GenerateCustomerHashKey]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[char]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[char]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateCustomerHashKey].[@customername]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateCustomerHashKey].[@state]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateCustomerHashKey].[@city]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+begin
+	declare @hashkey char(32);
+
+	select @hashkey=convert(char(32),
+		hashbytes('MD5',UPPER(TRIM(@customerName)) + '|' +
+            UPPER(TRIM(@State)) + '|' +
+            UPPER(TRIM(@City))
+        ), 2);
+	return @hashkey;
+end;]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="388" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="create   function dbo.ufn_GenerateCustomerHashKey(&#xD;&#xA;&#x9;@customername varchar(50),&#xD;&#xA;&#x9;@state varchar(30),&#xD;&#xA;&#x9;@city varchar(30)&#xD;&#xA;)&#xD;&#xA;returns char(32)&#xD;&#xA;as" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GenerateCustomerHashKey].[@customername]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GenerateCustomerHashKey].[@state]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GenerateCustomerHashKey].[@city]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Property Name="Length" Value="32" />
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[char]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[ufn_GenerateFactHashKey]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[char]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[char]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateFactHashKey].[@param1]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateFactHashKey].[@param2]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateFactHashKey].[@param3]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+BEGIN
+    DECLARE @hashkey CHAR(32);
+
+    SELECT @hashkey = CONVERT(CHAR(32),
+        HASHBYTES('MD5', 
+            UPPER(TRIM(@param1)) + '|' +
+            UPPER(TRIM(@param2)) + '|' +
+            CAST(@param3 AS NVARCHAR(20))
+        ), 2);
+
+    RETURN @hashkey;
+END;]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="431" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="CREATE   FUNCTION dbo.ufn_GenerateFactHashKey(&#xD;&#xA;    @param1 CHAR(32),   &#xD;&#xA;    @param2 CHAR(32),   &#xD;&#xA;    @param3 INT         &#xD;&#xA;)&#xD;&#xA;RETURNS CHAR(32)&#xD;&#xA;AS" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GenerateFactHashKey].[@param1]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="32" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GenerateFactHashKey].[@param2]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="32" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GenerateFactHashKey].[@param3]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Property Name="Length" Value="32" />
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[char]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[ufn_GeneratehashKey]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[char]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[char]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GeneratehashKey].[@param1]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GeneratehashKey].[@param2]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+begin
+	declare @hashkey char(32);
+
+	select @hashkey=convert(char(32),
+		hashbytes('MD5',UPPER(TRIM(@param1)) + '|' +
+            UPPER(TRIM(@param2))
+        ), 2);
+	return @hashkey;
+end;]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="309" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="create   function dbo.ufn_GeneratehashKey(&#xD;&#xA;&#x9;@param1 varchar(30),&#xD;&#xA;&#x9;@param2 varchar(30)&#xD;&#xA;)&#xD;&#xA;returns char(32)&#xD;&#xA;as" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GeneratehashKey].[@param1]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GeneratehashKey].[@param2]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Property Name="Length" Value="32" />
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[char]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[ufn_GenerateKey]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateKey].[@param1]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateKey].[@param2]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateKey].[@param3]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+BEGIN
+    RETURN ABS(
+        CHECKSUM(
+            UPPER(TRIM(@param1)) + '|' +
+            UPPER(TRIM(@param2)) + '|' +
+            UPPER(TRIM(@param3))
+        )
+    );
+END;]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="326" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="CREATE   FUNCTION dbo.ufn_GenerateKey&#xD;&#xA;(&#xD;&#xA;    @param1 VARCHAR(MAX),&#xD;&#xA;    @param2 VARCHAR(MAX),&#xD;&#xA;    @param3 VARCHAR(MAX)&#xD;&#xA;)&#xD;&#xA;RETURNS INT&#xD;&#xA;AS" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GenerateKey].[@param1]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GenerateKey].[@param2]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GenerateKey].[@param3]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[int]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[ufn_GenerateTargetHashKey]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[char]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[char]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateTargetHashKey].[@param1]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateTargetHashKey].[@param2]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+BEGIN
+    DECLARE @hashkey CHAR(32);
+
+    SELECT @hashkey = CONVERT(CHAR(32),
+        HASHBYTES('MD5',
+            CAST(@param1 AS NVARCHAR(max)) + '|' +
+            CAST(@param2 AS NVARCHAR(max)) 
+            
+        ), 2
+    );
+
+    RETURN @hashkey;
+END;]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="402" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="CREATE   FUNCTION dbo.ufn_GenerateTargetHashKey&#xD;&#xA;(&#xD;&#xA;    @param1 INT,         &#xD;&#xA;    @param2 int    &#xD;&#xA;      &#xD;&#xA;)&#xD;&#xA;RETURNS CHAR(32)&#xD;&#xA;AS" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GenerateTargetHashKey].[@param1]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GenerateTargetHashKey].[@param2]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Property Name="Length" Value="32" />
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[char]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[ufn_GenerateUniqueKey]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateUniqueKey].[@Source1]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateUniqueKey].[@Source2]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+BEGIN
+    RETURN ABS(
+        CHECKSUM(
+            UPPER(TRIM(@Source1)) + '|' +
+            UPPER(TRIM(@Source2))
+        )
+    );
+END;]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="269" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="CREATE   FUNCTION dbo.ufn_GenerateUniqueKey&#xD;&#xA;(&#xD;&#xA;    @Source1 VARCHAR(MAX),&#xD;&#xA;    @Source2 VARCHAR(MAX)  &#xD;&#xA;)&#xD;&#xA;RETURNS INT&#xD;&#xA;AS" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GenerateUniqueKey].[@Source1]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GenerateUniqueKey].[@Source2]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[int]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_PopulateDimCustomer]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+    SET NOCOUNT ON;
+
+	with SourceData as(
+	SELECT distinct
+		   dbo.ufn_generatekey(customerName,State,City) as customerKey,
+           dbo.ufn_GenerateCustomerHashKey(customerName, State, City) AS customerHashKey,
+            customerName,
+            State,
+            City
+        FROM eCommerceSalesDMStaging.[sales].[listOfOrders]
+    ) 
+
+    MERGE Dim.dimCustomer AS Target
+    USING 
+        SourceData as Source
+    ON Target.customerKey = Source.customerKey
+	
+    WHEN MATCHED AND Target.customerHashKey <> Source.customerHashKey THEN 
+        UPDATE SET 
+            Target.customerName = Source.customerName,
+            Target.State = Source.State,
+            Target.City = Source.City
+
+    WHEN NOT MATCHED BY TARGET THEN 
+        INSERT (customerKey, customerHashKey, customerName, State, City)
+        VALUES (Source.customerKey, Source.customerHashKey, Source.customerName, Source.State, Source.City);
+
+END;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateCustomerHashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimCustomer]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimCustomer].[customerKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimCustomer].[customerName]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[Dim].[dimCustomer].[State]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[Dim].[dimCustomer].[City]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[Dim].[dimCustomer].[customerhashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateCustomerHashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimCustomer].[customerKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimCustomer].[customerhashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimCustomer].[customerName]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimCustomer].[State]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimCustomer].[City]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateCustomerHashKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[dbo].[usp_PopulateDimCustomer].[CTE1].[SourceData]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[usp_PopulateDimCustomer].[CTE1].[SourceData].[customerKey]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[ufn_GenerateKey]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[usp_PopulateDimCustomer].[CTE1].[SourceData].[customerHashKey]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[ufn_GenerateCustomerHashKey]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[usp_PopulateDimCustomer].[CTE1].[SourceData].[customerName]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[usp_PopulateDimCustomer].[CTE1].[SourceData].[State]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[usp_PopulateDimCustomer].[CTE1].[SourceData].[City]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry />
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1011" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE   PROCEDURE dbo.usp_PopulateDimCustomer&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_PopulateDimDate]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[ 
+ begin
+	set nocount on;
+
+	INSERT INTO Dim.dimDate (
+		dateKey,
+		fullDate,
+		saleYear,
+		saleMonth,
+		saleMonthName
+		)
+        SELECT distinct
+            CONVERT(INT, FORMAT(OrderDate, 'yyyyMMdd')) AS dateKey,
+            OrderDate as fullDate,
+			YEAR(OrderDate) AS saleYear,
+            MONTH(OrderDate) AS saleMonth,
+            DATENAME(MONTH, OrderDate) AS saleMonthName
+            
+        FROM eCommerceSalesDMStaging.sales.listOfOrders
+        WHERE  CONVERT(INT, FORMAT(OrderDate, 'yyyyMMdd')) 
+            NOT IN (SELECT dateKey FROM Dim.dimDate);
+  End]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[Dim].[dimDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[dateKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[fullDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[saleYear]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[saleMonth]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[saleMonthName]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[dateKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="635" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="create   procedure dbo.usp_PopulateDimDate&#xD;&#xA;As" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_PopulateDimGeography]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+    SET NOCOUNT ON;
+
+    MERGE Dim.dimGeography AS Target
+    USING (
+        SELECT distinct
+		   dbo.ufn_GenerateUniqueKey(State,City) as GeographyKey,
+           dbo.ufn_GeneratehashKey(State, City) AS GeographyHashKey,
+            State,
+            City
+        FROM eCommerceSalesDMStaging.[sales].[listOfOrders]
+    ) AS Source
+    ON Target.GeographyKey = Source.GeographyKey
+
+    WHEN MATCHED AND Target.GeographyHashKey <> Source.GeographyHashKey THEN 
+        UPDATE SET 
+            Target.State = Source.State,
+            Target.City = Source.City
+
+    WHEN NOT MATCHED BY TARGET THEN 
+        INSERT ( GeographyKey, GeographyHashKey, State, City)
+        VALUES (Source. GeographyKey, Source.GeographyHashKey, Source.State, Source.City);
+END;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateUniqueKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GeneratehashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimGeography]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimGeography].[GeographyKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateUniqueKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimGeography].[State]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[Dim].[dimGeography].[City]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[Dim].[dimGeography].[GeographyHashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GeneratehashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimGeography].[GeographyKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimGeography].[GeographyHashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimGeography].[State]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimGeography].[City]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateUniqueKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GeneratehashKey]" />
+				</Entry>
+				<Entry />
+				<Entry />
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="838" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE   PROCEDURE dbo.usp_PopulateDimGeography&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_PopulateDimProduct]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+    SET NOCOUNT ON;
+
+    MERGE Dim.dimProduct AS Target
+    USING (
+        SELECT distinct
+		   dbo.ufn_GenerateUniqueKey(Category,subCategory) as ProductKey,
+           dbo.ufn_GeneratehashKey(Category, subCategory) AS ProductHashKey,
+            Category,
+            subCategory
+        FROM eCommerceSalesDMStaging.[sales].[orderDetails]
+    ) AS Source
+    ON Target.ProductKey = Source.ProductKey
+
+    WHEN MATCHED AND  Target.ProductHashKey <> Source.ProductHashKey THEN 
+        UPDATE SET 
+            Target.Category = Source.Category,
+            Target.subCategory = Source.subCategory
+
+    WHEN NOT MATCHED BY TARGET THEN 
+        INSERT ( ProductKey, ProductHashKey, Category, subCategory)
+        VALUES (Source. ProductKey, Source.ProductHashKey, Source.Category, Source.subCategory);
+
+END;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateUniqueKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GeneratehashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimProduct]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimProduct].[ProductKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateUniqueKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimProduct].[Category]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[Dim].[dimProduct].[subCategory]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References Name="[Dim].[dimProduct].[ProductHashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GeneratehashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimProduct].[ProductKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimProduct].[ProductHashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimProduct].[Category]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimProduct].[subCategory]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateUniqueKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GeneratehashKey]" />
+				</Entry>
+				<Entry />
+				<Entry />
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="887" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE   PROCEDURE dbo.usp_PopulateDimProduct&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_PopulateFactSalesAnalysis]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+    SET NOCOUNT ON;
+
+    ;WITH AggregatedData AS (
+        SELECT 
+            dbo.ufn_GenerateUniqueKey(o.state,o.city) as GeographyKey,
+            dbo.ufn_GenerateUniqueKey(l.category,l.subcategory) as ProductKey,
+            CONVERT(INT, FORMAT(o.OrderDate, 'yyyyMMdd')) AS dateKey,
+            SUM(l.Amount) AS TotalAmount,
+            SUM(l.Profit) AS TotalProfit,
+            SUM(l.Quantity) AS TotalQuantity
+        FROM eCommerceSalesDMStaging.sales.orderDetails AS l
+        INNER JOIN eCommerceSalesDMStaging.sales.listOfOrders AS o
+            ON l.orderId = o.orderId
+        GROUP BY 
+            dbo.ufn_GenerateUniqueKey(o.state,o.city),
+            dbo.ufn_GenerateUniqueKey(l.category,l.subcategory),
+            CONVERT(INT, FORMAT(o.OrderDate, 'yyyyMMdd'))
+    )
+    MERGE Fact.factSalesAnalysis AS Target
+    USING (
+        SELECT DISTINCT
+		    dbo.ufn_GenerateKey(ProductKey,GeographyKey,datekey) as salekey,
+            dbo.ufn_GenerateFactHashKey(ProductKey, GeographyKey, datekey) AS SaleHashKey,
+            GeographyKey,
+            ProductKey,
+            datekey,
+            TotalAmount,
+            TotalProfit,
+            TotalQuantity
+        FROM AggregatedData
+    ) AS Source
+    ON Target.SaleKey = Source.SaleKey
+
+    WHEN MATCHED AND  Target.SaleHashKey <> Source.SaleHashKey THEN 
+        UPDATE SET
+            Target.TotalAmount = Source.TotalAmount,
+            Target.TotalProfit = Source.TotalProfit,
+            Target.TotalQuantity = Source.TotalQuantity
+
+    WHEN NOT MATCHED BY TARGET THEN 
+        INSERT (SaleKey, saleHashKey, GeographyKey, ProductKey, datekey, TotalAmount, TotalProfit, TotalQuantity)
+        VALUES (Source.SaleKey, Source.saleHashKey, Source.GeographyKey, Source.ProductKey, Source.datekey, Source.TotalAmount, Source.TotalProfit, Source.TotalQuantity);
+END;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateUniqueKey]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateUniqueKey]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateUniqueKey]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateUniqueKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateUniqueKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateFactHashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[salekey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[TotalAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[TotalProfit]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[TotalQuantity]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[salehashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateFactHashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[salekey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[salehashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[GeographyKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[productKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[datekey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[TotalAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[TotalProfit]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[TotalQuantity]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateUniqueKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateUniqueKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[dbo].[usp_PopulateFactSalesAnalysis].[CTE1].[AggregatedData]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[usp_PopulateFactSalesAnalysis].[CTE1].[AggregatedData].[GeographyKey]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[ufn_GenerateUniqueKey]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[usp_PopulateFactSalesAnalysis].[CTE1].[AggregatedData].[ProductKey]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[ufn_GenerateUniqueKey]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[usp_PopulateFactSalesAnalysis].[CTE1].[AggregatedData].[dateKey]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[usp_PopulateFactSalesAnalysis].[CTE1].[AggregatedData].[TotalAmount]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[usp_PopulateFactSalesAnalysis].[CTE1].[AggregatedData].[TotalProfit]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[usp_PopulateFactSalesAnalysis].[CTE1].[AggregatedData].[TotalQuantity]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1939" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE   PROCEDURE dbo.usp_PopulateFactSalesAnalysis&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_PopulateFactSaleTargets]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+    SET NOCOUNT ON;
+
+    WITH TargetData AS (
+        SELECT DISTINCT
+		    CONVERT(INT, FORMAT(o.OrderDate, 'yyyyMMdd')) AS dateKey,
+            dbo.ufn_GenerateUniqueKey(l.category,l.subcategory) as ProductKey,
+			fs.Salekey,
+            MAX(st.Target) AS TotalTarget
+		FROM eCommerceSalesDMStaging.sales.orderDetails AS l
+        INNER JOIN eCommerceSalesDMStaging.sales.listOfOrders AS o
+            ON l.orderId = o.orderId
+		Inner join eCommerceSalesDMStaging.sales.salesTarget AS st
+		 ON FORMAT(o.OrderDate, 'yy-MMM') = st.[MonthOfOrderDate]
+		INNER JOIN Fact.factSalesAnalysis AS fs
+        ON fs.ProductKey = dbo.ufn_GenerateUniqueKey(l.category, l.subcategory)
+       AND fs.DateKey = CONVERT(INT, FORMAT(o.OrderDate, 'yyyyMMdd'))
+		GROUP BY
+        CONVERT(INT, FORMAT(o.OrderDate, 'yyyyMMdd')),
+        dbo.ufn_GenerateUniqueKey(l.category, l.subcategory),
+        fs.SaleKey
+		
+    )
+    MERGE Fact.factSaleTargets AS Tgt
+    USING (
+        SELECT DISTINCT
+		    dbo.ufn_GenerateKey(datekey,ProductKey,SaleKey) as Targetkey,
+            dbo.ufn_GenerateFactHashKey(dateKey, productKey,SaleKey) AS TargetHashKey,
+            dateKey,
+            productKey,
+			Salekey,
+            TotalTarget
+        FROM TargetData
+    ) AS Src
+    ON  Tgt.TargetKey = Src.TargetKey
+
+    WHEN MATCHED AND Tgt.TargetHashKey <> Src.TargetHashKey THEN 
+        UPDATE SET 
+            Tgt.TotalTarget = Src.TotalTarget
+
+    WHEN NOT MATCHED BY TARGET THEN 
+        INSERT (TargetKey, targetHashKey, dateKey, ProductKey,Salekey, TotalTarget)
+        VALUES (Src.TargetKey, Src.TargetHashKey, Src.dateKey, Src.productKey,Src.Salekey,  Src.TotalTarget);
+END;]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[productKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateUniqueKey]" />
+				</Entry>
+				<Entry />
+				<Entry />
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[datekey]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateUniqueKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[salekey]" />
+				</Entry>
+				<Entry />
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[salekey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateUniqueKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[salekey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateFactHashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSaleTargets]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSaleTargets].[targetKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSaleTargets].[TotalTarget]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSaleTargets].[targetHashkey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateFactHashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSaleTargets].[targetKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSaleTargets].[targetHashkey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSaleTargets].[dateKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSaleTargets].[ProductKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSaleTargets].[SaleKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSaleTargets].[TotalTarget]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GenerateUniqueKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[salekey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DynamicObjects">
+				<Entry>
+					<Element Type="SqlDynamicColumnSource" Name="[dbo].[usp_PopulateFactSaleTargets].[CTE1].[TargetData]">
+						<Relationship Name="Columns">
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[usp_PopulateFactSaleTargets].[CTE1].[TargetData].[dateKey]" />
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[usp_PopulateFactSaleTargets].[CTE1].[TargetData].[ProductKey]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[dbo].[ufn_GenerateUniqueKey]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[usp_PopulateFactSaleTargets].[CTE1].[TargetData].[Salekey]">
+									<Relationship Name="ExpressionDependencies">
+										<Entry>
+											<References Name="[Fact].[factSalesAnalysis].[salekey]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+							<Entry>
+								<Element Type="SqlComputedColumn" Name="[dbo].[usp_PopulateFactSaleTargets].[CTE1].[TargetData].[TotalTarget]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1759" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE   PROCEDURE dbo.[usp_PopulateFactSaleTargets]&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[vw_categories]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+select productkey,
+	category,
+	subCategory
+from Dim.dimProduct]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_categories].[productkey]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimProduct].[ProductKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_categories].[category]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimProduct].[Category]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_categories].[subCategory]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimProduct].[subCategory]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[Dim].[dimProduct]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimProduct].[ProductKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimProduct].[Category]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimProduct].[subCategory]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="102" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="create   view dbo.vw_categories&#xD;&#xA;as" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[vw_date]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[ 
+select datekey,
+	fulldate,
+	saleyear,
+	saleMonthName 
+from Dim.dimDate]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_date].[datekey]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimDate].[dateKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_date].[fulldate]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimDate].[fullDate]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_date].[saleyear]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimDate].[saleYear]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_date].[saleMonthName]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimDate].[saleMonthName]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[Dim].[dimDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[dateKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[fullDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[saleYear]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimDate].[saleMonthName]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="106" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="create   view dbo.vw_date&#xD;&#xA;as" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[vw_geography]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+select geographykey,
+	state,
+	city
+from Dim.dimGeography]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_geography].[geographykey]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimGeography].[GeographyKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_geography].[state]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimGeography].[State]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_geography].[city]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Dim].[dimGeography].[City]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[Dim].[dimGeography]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimGeography].[GeographyKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimGeography].[State]" />
+				</Entry>
+				<Entry>
+					<References Name="[Dim].[dimGeography].[City]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="95" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="create   view dbo.vw_geography&#xD;&#xA;as" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[vw_Sales]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+select salekey,
+	geographykey,
+	productkey,
+	datekey,
+	totalAmount,
+	TotalProfit,
+	TotalQuantity 
+from Fact.factSalesAnalysis]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_Sales].[salekey]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Fact].[factSalesAnalysis].[salekey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_Sales].[geographykey]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Fact].[factSalesAnalysis].[GeographyKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_Sales].[productkey]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Fact].[factSalesAnalysis].[productKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_Sales].[datekey]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Fact].[factSalesAnalysis].[datekey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_Sales].[totalAmount]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Fact].[factSalesAnalysis].[TotalAmount]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_Sales].[TotalProfit]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Fact].[factSalesAnalysis].[TotalProfit]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_Sales].[TotalQuantity]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Fact].[factSalesAnalysis].[TotalQuantity]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[salekey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[GeographyKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[productKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[datekey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[TotalAmount]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[TotalProfit]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[TotalQuantity]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="164" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="create   view dbo.vw_Sales&#xD;&#xA;as" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[vw_SaleTarget]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+select datekey,
+	productkey,
+	salekey,
+	totalTarget 
+from Fact.factSaleTargets]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_SaleTarget].[datekey]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Fact].[factSaleTargets].[dateKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_SaleTarget].[productkey]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Fact].[factSaleTargets].[ProductKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_SaleTarget].[salekey]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Fact].[factSaleTargets].[SaleKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[vw_SaleTarget].[totalTarget]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[Fact].[factSaleTargets].[TotalTarget]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[Fact].[factSaleTargets]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSaleTargets].[dateKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSaleTargets].[ProductKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSaleTargets].[SaleKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[Fact].[factSaleTargets].[TotalTarget]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="119" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="create   view dbo.vw_SaleTarget&#xD;&#xA;as" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlSchema" Name="[Dim]">
+			<Relationship Name="Authorizer">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[Dim].[dimCustomer]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Dim].[dimCustomer].[customerKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Dim].[dimCustomer].[customerhashKey]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="32" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Dim].[dimCustomer].[customerName]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Dim].[dimCustomer].[State]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Dim].[dimCustomer].[City]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Dim]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="4" />
+		</Element>
+		<Element Type="SqlTable" Name="[Dim].[dimDate]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Dim].[dimDate].[dateKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Dim].[dimDate].[fullDate]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[date]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Dim].[dimDate].[saleYear]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Dim].[dimDate].[saleMonth]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Dim].[dimDate].[saleMonthName]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Dim]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="3" />
+		</Element>
+		<Element Type="SqlTable" Name="[Dim].[dimGeography]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Dim].[dimGeography].[GeographyKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Dim].[dimGeography].[GeographyHashKey]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="32" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Dim].[dimGeography].[State]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Dim].[dimGeography].[City]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Dim]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="5" />
+		</Element>
+		<Element Type="SqlTable" Name="[Dim].[dimProduct]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Dim].[dimProduct].[ProductKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Dim].[dimProduct].[ProductHashKey]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="32" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Dim].[dimProduct].[Category]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Dim].[dimProduct].[subCategory]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="100" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Dim]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="6" />
+		</Element>
+		<Element Type="SqlSchema" Name="[Fact]">
+			<Relationship Name="Authorizer">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[Fact].[factSalesAnalysis]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Fact].[factSalesAnalysis].[salekey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Fact].[factSalesAnalysis].[salehashKey]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="32" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Fact].[factSalesAnalysis].[GeographyKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Fact].[factSalesAnalysis].[productKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Fact].[factSalesAnalysis].[datekey]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Fact].[factSalesAnalysis].[TotalAmount]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Fact].[factSalesAnalysis].[TotalProfit]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smallint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Fact].[factSalesAnalysis].[TotalQuantity]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[tinyint]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Fact]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="7" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
+		</Element>
+		<Element Type="SqlTable" Name="[Fact].[factSaleTargets]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Fact].[factSaleTargets].[targetKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Fact].[factSaleTargets].[targetHashkey]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="32" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Fact].[factSaleTargets].[dateKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Fact].[factSaleTargets].[ProductKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Fact].[factSaleTargets].[SaleKey]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[Fact].[factSaleTargets].[TotalTarget]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References Name="[Fact]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="8" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[Fact].[FK_factSales_dimGeography_GeographyKey_1]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[GeographyKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[Dim].[dimGeography].[GeographyKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[Dim].[dimGeography]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="9" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[Fact].[FK_factSales_dimProduct_ProductKey_1]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[productKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[Dim].[dimProduct].[ProductKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[Dim].[dimProduct]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="10" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[Fact].[FK_factSaleTargets_dimDate_dateKey_1]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[Fact].[factSaleTargets].[dateKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Fact].[factSaleTargets]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[Dim].[dimDate].[dateKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[Dim].[dimDate]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="11" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[Fact].[FK_factSaleTargets_dimProduct_ProductKey_1]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[Fact].[factSaleTargets].[ProductKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Fact].[factSaleTargets]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[Dim].[dimProduct].[ProductKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[Dim].[dimProduct]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="12" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[Fact].[FK_factSaleTargets_FactSalesAnalysis_SaleKey_1]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[Fact].[factSaleTargets].[SaleKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[Fact].[factSaleTargets]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis].[salekey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[Fact].[factSalesAnalysis]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="13" />
+		</Element>
+	</Model>
+</DataSchemaModel>
