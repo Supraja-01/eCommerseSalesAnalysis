@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadingDM"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{C95A09E2-513A-4C83-9269-6CE54C2707BC}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{427AE117-21CE-4E8A-B9B7-02785062F2AF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>

@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">RC-08029</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANvDafv+NCEiR9JozhD4rpAAAAAACAAAAAAAQZgAAAAEAACAAAABgOFYmaqB0/wlzWuWYn2xXjC3fCYG32Ov2j+KCs+QRNgAAAAAOgAAAAAIAACAAAAABuidqpx5eBqKlAwe+2eVSH1m4xaKnaQZJkG1+YzvNfpAAAAC/0b10iGbhCD83NT/ja6TvGqUlQWRpngocxQy1cb4rvhu0Pu5BdKo5CMNdeBW1W0V1V4e9NMamD9UkZ9b/7V90tN8/xK5Anlzw57avNwBC61CLi1pge5ZsPKa3DXDf4QdvzowE2blrc9bNmotRJ/E3ebFEc8/wQuD4tawxe3lV2AoEc66KaPrujqkTJIbExIZAAAAA9GXwAfMSgFyaTc8vFHizF9Y1Gz/b03k0eF1kSMIGiBlkTKRpWc707P1tjVWO2MZ6JdMXDPY5JWMcpfdclA9BUw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAANvDafv+NCEiR9JozhD4rpAAAAAACAAAAAAAQZgAAAAEAACAAAAALiWt6uz1jX+9atsD5QgZwE2JEJvAkcl4fDPXZyU27DwAAAAAOgAAAAAIAACAAAAAkp9RWx2BGNcOe+k+opn1S3qfmcPp207v32TpFGYcjpZAAAAClMfrCDu+b/x+2Cu/+6GCtILLrQwWcVVywQFS+WY/E/0tLUhCH4TZCfQ3u5knsv3F2NXiftbqrvd3ORG9PQMaig+Pln4NSmdXwbR6hyn+dix/hYVD/ySI27zDUS7JWvMSbGf3e6nPMaoo3g/NoFcAuHtnycvX+UfOMEdWkdILM56OHiSFdtB8y0f7y/aW5bUZAAAAAnZN1Q1OjItiPiDXnuYXv62fLSi1BPwKHUoz0NkisS4J0AHOgRed2bEev1trN2F2XX+Ye5VF5EAUVXorKEAf0QQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -42,17 +42,17 @@
                 <SSIS:Property SSIS:Name="Name">LoadingDM</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">7</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">9</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{CA42BB73-6B1E-44D7-A106-E697E0DDFFCD}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{427AE117-21CE-4E8A-B9B7-02785062F2AF}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
                 <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
               </SSIS:Properties>
               <SSIS:Parameters>
-                <SSIS:Parameter SSIS:Name="CM.RC-08029.eCommerceSalesDM.ConnectByProxy">
+                <SSIS:Parameter SSIS:Name="CM.DB_Connection_eCommerceSalesDM.ConnectByProxy">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -67,7 +67,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.RC-08029.eCommerceSalesDM.ConnectionString">
+                <SSIS:Parameter SSIS:Name="CM.DB_Connection_eCommerceSalesDM.ConnectionString">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -82,7 +82,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.RC-08029.eCommerceSalesDM.ConnectRetryCount">
+                <SSIS:Parameter SSIS:Name="CM.DB_Connection_eCommerceSalesDM.ConnectRetryCount">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -97,7 +97,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.RC-08029.eCommerceSalesDM.ConnectRetryInterval">
+                <SSIS:Parameter SSIS:Name="CM.DB_Connection_eCommerceSalesDM.ConnectRetryInterval">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -112,7 +112,7 @@
                     <SSIS:Property SSIS:Name="DataType">9</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.RC-08029.eCommerceSalesDM.ConnectUsingManagedIdentity">
+                <SSIS:Parameter SSIS:Name="CM.DB_Connection_eCommerceSalesDM.ConnectUsingManagedIdentity">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -127,7 +127,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.RC-08029.eCommerceSalesDM.InitialCatalog">
+                <SSIS:Parameter SSIS:Name="CM.DB_Connection_eCommerceSalesDM.InitialCatalog">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -142,7 +142,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.RC-08029.eCommerceSalesDM.Password">
+                <SSIS:Parameter SSIS:Name="CM.DB_Connection_eCommerceSalesDM.Password">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -156,7 +156,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.RC-08029.eCommerceSalesDM.RetainSameConnection">
+                <SSIS:Parameter SSIS:Name="CM.DB_Connection_eCommerceSalesDM.RetainSameConnection">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -171,7 +171,7 @@
                     <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.RC-08029.eCommerceSalesDM.ServerName">
+                <SSIS:Parameter SSIS:Name="CM.DB_Connection_eCommerceSalesDM.ServerName">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>
@@ -186,7 +186,7 @@
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
-                <SSIS:Parameter SSIS:Name="CM.RC-08029.eCommerceSalesDM.UserName">
+                <SSIS:Parameter SSIS:Name="CM.DB_Connection_eCommerceSalesDM.UserName">
                   <SSIS:Properties>
                     <SSIS:Property SSIS:Name="ID">
                     </SSIS:Property>

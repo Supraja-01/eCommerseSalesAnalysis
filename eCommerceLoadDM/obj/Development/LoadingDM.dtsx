@@ -11,16 +11,16 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadingDM"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{CA42BB73-6B1E-44D7-A106-E697E0DDFFCD}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{427AE117-21CE-4E8A-B9B7-02785062F2AF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[RC-08029.eCommerceSalesDM]"
+      DTS:refId="Package.ConnectionManagers[DB_Connection_eCommerceSalesDM]"
       DTS:CreationName="OLEDB"
       DTS:DTSID="{D4ACC9B8-3B88-48EC-9976-F9335160E05F}"
-      DTS:ObjectName="RC-08029.eCommerceSalesDM">
+      DTS:ObjectName="DB_Connection_eCommerceSalesDM">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"

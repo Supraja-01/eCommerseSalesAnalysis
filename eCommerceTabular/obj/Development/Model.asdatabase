@@ -5,10 +5,10 @@
     "culture": "en-US",
     "dataSources": [
       {
-        "name": "SqlServer RC-08029 eCommerceSalesDM 2",
+        "name": "SqlServer RC-08029 eCommerceSalesDM",
         "connectionString": "Provider=SQLOLEDB;Data Source=RC-08029;Initial Catalog=eCommerceSalesDM;Integrated Security=SSPI;Persist Security Info=false",
         "impersonationMode": "impersonateAccount",
-        "account": "RARECREW\\SUPRAJABOMMISETTY",
+        "account": "RARECREW\\suprajabommisetty",
         "annotations": [
           {
             "name": "ConnectionEditUISource",
@@ -47,7 +47,7 @@
             "source": {
               "type": "query",
               "query": " \t\t\t\tSELECT [dbo].[vw_categories].*   FROM [dbo].[vw_categories] ",
-              "dataSource": "SqlServer RC-08029 eCommerceSalesDM 2"
+              "dataSource": "SqlServer RC-08029 eCommerceSalesDM"
             }
           }
         ],
@@ -101,7 +101,7 @@
             "source": {
               "type": "query",
               "query": " \t\t\t\tSELECT [dbo].[vw_date].*   FROM [dbo].[vw_date] ",
-              "dataSource": "SqlServer RC-08029 eCommerceSalesDM 2"
+              "dataSource": "SqlServer RC-08029 eCommerceSalesDM"
             }
           }
         ],
@@ -149,7 +149,7 @@
             "source": {
               "type": "query",
               "query": " \t\t\t\tSELECT [dbo].[vw_geography].*   FROM [dbo].[vw_geography] ",
-              "dataSource": "SqlServer RC-08029 eCommerceSalesDM 2"
+              "dataSource": "SqlServer RC-08029 eCommerceSalesDM"
             }
           }
         ],
@@ -221,7 +221,7 @@
             "source": {
               "type": "query",
               "query": " \t\t\t\tSELECT [dbo].[vw_Sales].*   FROM [dbo].[vw_Sales] ",
-              "dataSource": "SqlServer RC-08029 eCommerceSalesDM 2"
+              "dataSource": "SqlServer RC-08029 eCommerceSalesDM"
             }
           }
         ],
@@ -275,7 +275,7 @@
             "source": {
               "type": "query",
               "query": " \t\t\t\tSELECT [dbo].[vw_SaleTarget].*   FROM [dbo].[vw_SaleTarget] ",
-              "dataSource": "SqlServer RC-08029 eCommerceSalesDM 2"
+              "dataSource": "SqlServer RC-08029 eCommerceSalesDM"
             }
           }
         ],
@@ -293,36 +293,6 @@
             "value": "dbo"
           }
         ]
-      }
-    ],
-    "relationships": [
-      {
-        "name": "1e74df3b-0070-485a-a19b-63e8cf39bdd5",
-        "fromTable": "vw_Sales",
-        "fromColumn": "productkey",
-        "toTable": "vw_categories",
-        "toColumn": "productkey"
-      },
-      {
-        "name": "a30ec482-61ea-437c-93e1-39c3dbac0b6e",
-        "fromTable": "vw_Sales",
-        "fromColumn": "datekey",
-        "toTable": "vw_date",
-        "toColumn": "datekey"
-      },
-      {
-        "name": "35121cde-e013-47f6-9938-889956d63d75",
-        "fromTable": "vw_Sales",
-        "fromColumn": "geographykey",
-        "toTable": "vw_geography",
-        "toColumn": "geographykey"
-      },
-      {
-        "name": "61a7c928-539e-4260-9f3c-be92fa572ac8",
-        "fromTable": "vw_Sales",
-        "fromColumn": "salekey",
-        "toTable": "vw_SaleTarget",
-        "toColumn": "Salekey"
       }
     ],
     "annotations": [
