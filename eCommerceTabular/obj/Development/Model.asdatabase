@@ -225,6 +225,20 @@
             }
           }
         ],
+        "measures": [
+          {
+            "name": "Total Sale Amount",
+            "expression": " SUM(vw_Sales[TotalAmount])"
+          },
+          {
+            "name": "Total Sale Profit",
+            "expression": " SUM(vw_Sales[TotalProfit])"
+          },
+          {
+            "name": "Total Sale Quantity",
+            "expression": " SUM(vw_Sales[TotalQuantity])"
+          }
+        ],
         "annotations": [
           {
             "name": "_TM_ExtProp_QueryDefinition",
@@ -293,6 +307,36 @@
             "value": "dbo"
           }
         ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "378886c1-d8f9-4c42-9431-c3e854fa7fdb",
+        "fromTable": "vw_Sales",
+        "fromColumn": "productkey",
+        "toTable": "vw_categories",
+        "toColumn": "productkey"
+      },
+      {
+        "name": "082c6fc5-9dad-4251-a9e3-4f5ecaa73c05",
+        "fromTable": "vw_Sales",
+        "fromColumn": "geographykey",
+        "toTable": "vw_geography",
+        "toColumn": "geographykey"
+      },
+      {
+        "name": "b9c22415-6987-44f4-a596-c2e8908a5137",
+        "fromTable": "vw_SaleTarget",
+        "fromColumn": "Salekey",
+        "toTable": "vw_Sales",
+        "toColumn": "salekey"
+      },
+      {
+        "name": "77c07fb4-af0d-433e-8936-c297ebfec6ae",
+        "fromTable": "vw_Sales",
+        "fromColumn": "datekey",
+        "toTable": "vw_date",
+        "toColumn": "datekey"
       }
     ],
     "annotations": [
