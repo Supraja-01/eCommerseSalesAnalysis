@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="loadingSourceFiles"
   DTS:PackageType="5"
-  DTS:VersionBuild="35"
-  DTS:VersionGUID="{6194D572-415B-4B4A-9B29-9E5554B46A57}">
+  DTS:VersionBuild="36"
+  DTS:VersionGUID="{2DCE6B26-FD53-4499-911A-04C1EA0A1EA1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -655,7 +655,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate _listOfOrders"
-          DTS:ThreadHint="1">
+          DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1132,7 +1132,7 @@
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate_OrderDetails"
-          DTS:ThreadHint="0">
+          DTS:ThreadHint="1">
           <DTS:Variables />
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
@@ -1521,13 +1521,13 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="186.666666666667,42.6666666666667"
-          Id="Package\ListOfOrders_Container\Truncate _listOfOrders"
-          TopLeft="37.6249948311599,5.23332942803714" />
-        <NodeLayout
           Size="162.666666666667,41.3333333333334"
           Id="Package\ListOfOrders_Container\load_ListOfOrders"
           TopLeft="58.874993881211,87.7833254917465" />
+        <NodeLayout
+          Size="186.666666666667,42.6666666666667"
+          Id="Package\ListOfOrders_Container\Truncate _listOfOrders"
+          TopLeft="37.6249948311599,5.23332942803714" />
         <EdgeLayout
           Id="Package\ListOfOrders_Container.PrecedenceConstraints[Constraint]"
           TopLeft="130.958328164493,47.8999960947038">
@@ -1565,18 +1565,18 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="274.666666666667,158"
+          PanelSize="274.666666666667,158.666666666667"
           Size="274.666666666667,201.333333333334"
           Id="Package\ListOfOrders_Container"
-          TopLeft="16.2499992735684,59.9333282502493" />
-        <NodeLayout
-          Size="185.333333333334,42.6666666666667"
-          Id="Package\OrderDetails_Container\Truncate_OrderDetails"
-          TopLeft="42.1666547084851,8.11666192452122" />
+          TopLeft="8.1249996367842,48.2333288081488" />
         <NodeLayout
           Size="162.666666666667,41.3333333333334"
           Id="Package\OrderDetails_Container\load_OrderDetails"
           TopLeft="48.5833212075138,93.8333268245064" />
+        <NodeLayout
+          Size="185.333333333334,42.6666666666667"
+          Id="Package\OrderDetails_Container\Truncate_OrderDetails"
+          TopLeft="42.1666547084851,8.11666192452122" />
         <EdgeLayout
           Id="Package\OrderDetails_Container.PrecedenceConstraints[Constraint]"
           TopLeft="132.374987957999,50.7833285911879">
@@ -1605,15 +1605,15 @@
           PanelSize="254.666666666667,153.333333333334"
           Size="254.666666666667,196"
           Id="Package\OrderDetails_Container"
-          TopLeft="297.499986700714,55.0499982333184" />
-        <NodeLayout
-          Size="181.333333333334,42.6666666666667"
-          Id="Package\SalesTarget_Container\Truncate_salesTarget"
-          TopLeft="45.2916536747173,21.2666591040295" />
+          TopLeft="289.99998703599,53.7499982953073" />
         <NodeLayout
           Size="157.333333333334,41.3333333333334"
           Id="Package\SalesTarget_Container\load_salesTarget"
           TopLeft="57.1666531438632,95.7999921894076" />
+        <NodeLayout
+          Size="181.333333333334,42.6666666666667"
+          Id="Package\SalesTarget_Container\Truncate_salesTarget"
+          TopLeft="45.2916536747173,21.2666591040295" />
         <EdgeLayout
           Id="Package\SalesTarget_Container.PrecedenceConstraints[Constraint]"
           TopLeft="135.895820075957,63.9333257706962">
@@ -1639,10 +1639,10 @@
         <ContainerLayout
           HeaderHeight="43"
           IsExpanded="True"
-          PanelSize="257.333333333334,151.333333333334"
+          PanelSize="257.333333333334,150.666666666667"
           Size="257.333333333334,194"
           Id="Package\SalesTarget_Container"
-          TopLeft="572.916645376633,59.0500007128715" />
+          TopLeft="555.416646158944,55.8000008678436" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
