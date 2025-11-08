@@ -1,3 +1,0 @@
-﻿CREATE SCHEMA [Dim]
-    AUTHORIZATION [dbo];
-

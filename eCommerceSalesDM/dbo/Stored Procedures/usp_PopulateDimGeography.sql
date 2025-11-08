@@ -3,23 +3,23 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    MERGE Dim.dimGeography AS Target
+    MERGE Dbo.DimGeography AS Target
     USING (
         SELECT distinct
 		   dbo.ufn_GenerateUniqueKey(State,City) as GeographyKey,
-           dbo.ufn_GeneratehashKey(State, City) AS GeographyHashKey,
+           dbo.ufn_GenerateHashKey(State, City) AS HashKey,
             State,
             City
         FROM eCommerceSalesDMStaging.[sales].[listOfOrders]
     ) AS Source
     ON Target.GeographyKey = Source.GeographyKey
 
-    WHEN MATCHED AND Target.GeographyHashKey <> Source.GeographyHashKey THEN 
+    WHEN MATCHED AND Target.HashKey <> Source.HashKey THEN 
         UPDATE SET 
             Target.State = Source.State,
             Target.City = Source.City
 
     WHEN NOT MATCHED BY TARGET THEN 
-        INSERT ( GeographyKey, GeographyHashKey, State, City)
-        VALUES (Source. GeographyKey, Source.GeographyHashKey, Source.State, Source.City);
+        INSERT ( GeographyKey, State, City, HashKey)
+        VALUES (Source. GeographyKey, Source.State, Source.City, Source.HashKey);
 END;

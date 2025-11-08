@@ -1,4 +1,5 @@
-﻿CREATE   PROCEDURE dbo.usp_PopulateDimCustomer
+﻿
+CREATE   PROCEDURE dbo.usp_PopulateDimCustomer
 AS
 BEGIN
     SET NOCOUNT ON;
@@ -6,26 +7,26 @@ BEGIN
 	with SourceData as(
 	SELECT distinct
 		   dbo.ufn_generatekey(customerName,State,City) as customerKey,
-           dbo.ufn_GenerateCustomerHashKey(customerName, State, City) AS customerHashKey,
             customerName,
             State,
-            City
+            City,
+			dbo.ufn_GenerateUniqueHashKey(customerName, State, City) AS HashKey
         FROM eCommerceSalesDMStaging.[sales].[listOfOrders]
     ) 
 
-    MERGE Dim.dimCustomer AS Target
+    MERGE Dbo.DimCustomer AS Target
     USING 
         SourceData as Source
     ON Target.customerKey = Source.customerKey
 	
-    WHEN MATCHED AND Target.customerHashKey <> Source.customerHashKey THEN 
+    WHEN MATCHED AND Target.HashKey <> Source.HashKey THEN 
         UPDATE SET 
             Target.customerName = Source.customerName,
             Target.State = Source.State,
             Target.City = Source.City
 
     WHEN NOT MATCHED BY TARGET THEN 
-        INSERT (customerKey, customerHashKey, customerName, State, City)
-        VALUES (Source.customerKey, Source.customerHashKey, Source.customerName, Source.State, Source.City);
+        INSERT (customerKey,customerName, State, City,HashKey )
+        VALUES (Source.customerKey, Source.customerName, Source.State, Source.City, Source.HashKey);
 
 END;

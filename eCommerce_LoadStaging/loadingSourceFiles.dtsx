@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="loadingSourceFiles"
   DTS:PackageType="5"
-  DTS:VersionBuild="36"
-  DTS:VersionGUID="{2DCE6B26-FD53-4499-911A-04C1EA0A1EA1}">
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{3D49BED7-557E-48F3-9D47-C8B235E45BF5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1652,27 +1652,27 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.666666666667,41.3333333333334"
-          Id="Package\ListOfOrders_Container\load_ListOfOrders\Flat File Source"
-          TopLeft="299.874991899356,69.5499988144636" />
-        <NodeLayout
           Size="170.666666666667,41.3333333333334"
           Id="Package\ListOfOrders_Container\load_ListOfOrders\OLE DB Destination"
           TopLeft="287.124992499128,169.349997923971" />
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\ListOfOrders_Container\load_ListOfOrders\Flat File Source"
+          TopLeft="299.874991899356,69.5499988144636" />
         <EdgeLayout
           Id="Package\ListOfOrders_Container\load_ListOfOrders.Paths[Flat File Source Output]"
-          TopLeft="373.833325532575,110.883332147797">
+          TopLeft="374.166658865909,112.21666548113">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,58.4666657761738"
+              EndConnector="0,57.1333324428407"
               Start="0,0"
-              End="0,50.9666657761738">
+              End="0,49.6333324428407">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.9666657761738" />
+                    End="0,49.6333324428407" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1701,7 +1701,7 @@
     design-time-name="Package\OrderDetails_Container\load_OrderDetails">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.666666666667,41.3333333333334"
           Id="Package\OrderDetails_Container\load_OrderDetails\Flat File Source"
@@ -1741,7 +1741,9 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -1766,13 +1768,13 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="150.666666666667,41.3333333333334"
-          Id="Package\SalesTarget_Container\load_salesTarget\Flat File Source"
-          TopLeft="177.999997347593,64.9999990314245" />
-        <NodeLayout
           Size="170.666666666667,41.3333333333334"
           Id="Package\SalesTarget_Container\load_salesTarget\OLE DB Destination"
           TopLeft="178.999997332692,182.999997273088" />
+        <NodeLayout
+          Size="150.666666666667,41.3333333333334"
+          Id="Package\SalesTarget_Container\load_salesTarget\Flat File Source"
+          TopLeft="177.999997347593,64.9999990314245" />
         <EdgeLayout
           Id="Package\SalesTarget_Container\load_salesTarget.Paths[Flat File Source Output]"
           TopLeft="253.199997347593,106.599999031425">
