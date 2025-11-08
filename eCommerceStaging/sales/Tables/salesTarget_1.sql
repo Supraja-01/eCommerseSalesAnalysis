@@ -1,6 +1,6 @@
-﻿CREATE TABLE [sales].[salesTarget] (
+﻿CREATE TABLE [Sales].[SalesTarget] (
     [MonthOfOrderDate] VARCHAR (20) NOT NULL,
-    [Category]         VARCHAR (50) NULL,
+    [Category]         VARCHAR (20) NULL,
     [Target]           INT          NOT NULL
 );
 
