@@ -62,8 +62,8 @@
   </ItemGroup>
   <ItemGroup>
     <Build Include="Security\sales_1.sql" />
-    <Build Include="sales\Tables\salesTarget_1.sql" />
-    <Build Include="sales\Tables\orderDetails_1.sql" />
-    <Build Include="sales\Tables\listOfOrders_1.sql" />
+    <Build Include="sales\Tables\SalesTarget.sql" />
+    <Build Include="sales\Tables\OrderDetails.sql" />
+    <Build Include="sales\Tables\ListOfOrders.sql" />
   </ItemGroup>
 </Project>
