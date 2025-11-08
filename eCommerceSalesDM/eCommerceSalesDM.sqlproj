@@ -65,32 +65,30 @@
     <Folder Include="dbo\Functions\" />
     <Folder Include="dbo\Stored Procedures\" />
     <Folder Include="Security\" />
+    <Folder Include="dbo\Tables\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Fact\Tables\factSaleTargets.sql" />
-    <Build Include="Fact\Tables\factSalesAnalysis.sql" />
-    <Build Include="Dim\Tables\dimProduct.sql" />
-    <Build Include="Dim\Tables\dimGeography.sql" />
-    <Build Include="Dim\Tables\dimCustomer.sql" />
-    <Build Include="Dim\Tables\dimDate.sql" />
-    <Build Include="dbo\Views\vw_SaleTarget.sql" />
-    <Build Include="dbo\Views\vw_Sales.sql" />
-    <Build Include="dbo\Views\vw_geography.sql" />
-    <Build Include="dbo\Views\vw_date.sql" />
-    <Build Include="dbo\Views\vw_categories.sql" />
     <Build Include="dbo\Functions\ufn_GenerateUniqueKey.sql" />
-    <Build Include="dbo\Functions\ufn_GenerateTargetHashKey.sql" />
     <Build Include="dbo\Functions\ufn_GenerateKey.sql" />
     <Build Include="dbo\Functions\ufn_GeneratehashKey.sql" />
-    <Build Include="dbo\Functions\ufn_GenerateFactHashKey.sql" />
-    <Build Include="dbo\Functions\ufn_GenerateCustomerHashKey.sql" />
-    <Build Include="dbo\Stored Procedures\usp_PopulateFactSaleTargets.sql" />
     <Build Include="dbo\Stored Procedures\usp_PopulateFactSalesAnalysis.sql" />
     <Build Include="dbo\Stored Procedures\usp_PopulateDimProduct.sql" />
     <Build Include="dbo\Stored Procedures\usp_PopulateDimGeography.sql" />
     <Build Include="dbo\Stored Procedures\usp_PopulateDimDate.sql" />
     <Build Include="dbo\Stored Procedures\usp_PopulateDimCustomer.sql" />
-    <Build Include="Security\Fact.sql" />
-    <Build Include="Security\Dim.sql" />
+    <Build Include="dbo\Tables\FactSalesTargets.sql" />
+    <Build Include="dbo\Tables\FactSalesAnalysis.sql" />
+    <Build Include="dbo\Tables\DimProduct.sql" />
+    <Build Include="dbo\Tables\DimGeography.sql" />
+    <Build Include="dbo\Tables\DimDate.sql" />
+    <Build Include="dbo\Tables\DimCustomer.sql" />
+    <Build Include="dbo\Functions\ufn_GenerateUniqueHashKey.sql" />
+    <Build Include="dbo\Stored Procedures\usp_populateFactSalesTargets.sql" />
+    <Build Include="dbo\Views\vw_FactSalesTargets.sql" />
+    <Build Include="dbo\Views\vw_FactSalesAnalysis.sql" />
+    <Build Include="dbo\Views\vw_DimProduct.sql" />
+    <Build Include="dbo\Views\vw_DimGeography.sql" />
+    <Build Include="dbo\Views\vw_DimDate.sql" />
+    <Build Include="dbo\Views\vw_DimCustomer.sql" />
   </ItemGroup>
 </Project>

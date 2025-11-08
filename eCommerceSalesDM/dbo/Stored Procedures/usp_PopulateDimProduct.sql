@@ -3,24 +3,24 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-    MERGE Dim.dimProduct AS Target
+    MERGE Dbo.dimProduct AS Target
     USING (
         SELECT distinct
 		   dbo.ufn_GenerateUniqueKey(Category,subCategory) as ProductKey,
-           dbo.ufn_GeneratehashKey(Category, subCategory) AS ProductHashKey,
             Category,
-            subCategory
+            SubCategory,
+			dbo.ufn_GeneratehashKey(Category, SubCategory) AS HashKey
         FROM eCommerceSalesDMStaging.[sales].[orderDetails]
     ) AS Source
     ON Target.ProductKey = Source.ProductKey
 
-    WHEN MATCHED AND  Target.ProductHashKey <> Source.ProductHashKey THEN 
+    WHEN MATCHED AND  Target.HashKey <> Source.HashKey THEN 
         UPDATE SET 
             Target.Category = Source.Category,
             Target.subCategory = Source.subCategory
 
     WHEN NOT MATCHED BY TARGET THEN 
-        INSERT ( ProductKey, ProductHashKey, Category, subCategory)
-        VALUES (Source. ProductKey, Source.ProductHashKey, Source.Category, Source.subCategory);
+        INSERT ( ProductKey, Category, subCategory,HashKey)
+        VALUES (Source. ProductKey, Source.Category, Source.subCategory,Source.HashKey);
 
 END;

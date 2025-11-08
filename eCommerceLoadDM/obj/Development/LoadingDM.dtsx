@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="LoadingDM"
   DTS:PackageType="5"
-  DTS:VersionBuild="9"
-  DTS:VersionGUID="{427AE117-21CE-4E8A-B9B7-02785062F2AF}">
+  DTS:VersionBuild="13"
+  DTS:VersionGUID="{EA48886C-E361-4F49-9618-49D8E9191F78}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -32,143 +32,207 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\load_dimCustomer"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{84B38B34-06A3-4E1E-9461-14E9ACB35AE0}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:refId="Package\Load Dim"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{DB36452E-9AD5-4319-AEB5-C085ABC45F4C}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="load_dimCustomer"
-      DTS:ThreadHint="0">
+      DTS:ObjectName="Load Dim">
       <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{D4ACC9B8-3B88-48EC-9976-F9335160E05F}"
-          SQLTask:SqlStatementSource="exec usp_PopulateDimCustomer" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load Dim\Exec_usp_PopulateDimCustomer"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{35167F99-2685-4659-BCBD-1F8B9488227F}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Exec_usp_PopulateDimCustomer">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Load Dim\Exec_usp_PopulateDimCustomer\load_DimCustomer"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{171c6ac0-94d9-4260-aa2e-b1aad7c1e7eb}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load_DimCustomer"
+              DTS:ThreadHint="3">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{D4ACC9B8-3B88-48EC-9976-F9335160E05F}"
+                  SQLTask:SqlStatementSource="exec usp_PopulateDimCustomer" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Dim\Exec_usp_PopulateDimDate"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{68F3C6FC-897C-4BA2-8569-4E1D81D12B6D}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Exec_usp_PopulateDimDate">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Load Dim\Exec_usp_PopulateDimDate\load_DimDate"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{f5c65b0f-9ab4-4222-a4c6-e16608b8316a}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load_DimDate"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{D4ACC9B8-3B88-48EC-9976-F9335160E05F}"
+                  SQLTask:SqlStatementSource="exec usp_PopulateDimDate" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Dim\Exec_usp_PopulateDimGeography"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{AE7F0BED-E978-431B-89C7-486922F6BA3F}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Exec_usp_PopulateDimGeography">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Load Dim\Exec_usp_PopulateDimGeography\load_DimGeography"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{26f5b313-2754-4ef5-85cb-76a7bfb41840}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load_DimGeography"
+              DTS:ThreadHint="1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{D4ACC9B8-3B88-48EC-9976-F9335160E05F}"
+                  SQLTask:SqlStatementSource="exec usp_PopulateDimGeography" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Dim\Exec_usp_PopulateDimProduct"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{A2BD4705-0CFC-460F-A277-DBA8277674AB}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Exec_usp_PopulateDimProduct">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Load Dim\Exec_usp_PopulateDimProduct\load_DimProduct"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{567ff0d9-c967-4d8f-b8dc-2dd48fa54c49}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load_DimProduct"
+              DTS:ThreadHint="2">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{D4ACC9B8-3B88-48EC-9976-F9335160E05F}"
+                  SQLTask:SqlStatementSource="exec usp_PopulateDimProduct" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:Executable>
+      </DTS:Executables>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\load_dimDate"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{CD620C33-8591-46FF-8198-CD887694FDBA}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:refId="Package\Load_Fact"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{6F352FC6-2BDB-4E07-B95A-272328161A14}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
-      DTS:ObjectName="load_dimDate"
-      DTS:ThreadHint="0">
+      DTS:ObjectName="Load_Fact">
       <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{D4ACC9B8-3B88-48EC-9976-F9335160E05F}"
-          SQLTask:SqlStatementSource="exec usp_PopulateDimDate" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\load_dimGeography"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{4FF1CE07-93F9-45CC-B9E6-13CA4ADC7E32}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="load_dimGeography"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{D4ACC9B8-3B88-48EC-9976-F9335160E05F}"
-          SQLTask:SqlStatementSource="exec usp_PopulateDimGeography" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\load_dimProduct"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{F8EF2A06-09F0-4929-9633-17EA4420DD4C}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="load_dimProduct"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{D4ACC9B8-3B88-48EC-9976-F9335160E05F}"
-          SQLTask:SqlStatementSource="exec usp_PopulateDimProduct" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\load_factSalesAnalysis"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{57572045-F93C-45F2-A562-5698B0CDA639}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="load_factSalesAnalysis"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{D4ACC9B8-3B88-48EC-9976-F9335160E05F}"
-          SQLTask:SqlStatementSource="exec dbo.usp_PopulateFactSalesAnalysis" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\load_factSaleTargets"
-      DTS:CreationName="Microsoft.ExecuteSQLTask"
-      DTS:Description="Execute SQL Task"
-      DTS:DTSID="{52A23F54-C1EE-4931-8A80-AA79FB7C5BF9}"
-      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="load_factSaleTargets"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{D4ACC9B8-3B88-48EC-9976-F9335160E05F}"
-          SQLTask:SqlStatementSource="exec dbo.usp_populateFactSaleTargets" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load_Fact\Exec usp_PopulateFactSalesAnalysis"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{A8B05980-5BB7-4E65-A638-7BCE032F717D}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Exec usp_PopulateFactSalesAnalysis">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Load_Fact\Exec usp_PopulateFactSalesAnalysis\load_FactSalesAnalysis"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{8716f0d6-d307-48fa-93d9-a36fc967f810}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load_FactSalesAnalysis"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{D4ACC9B8-3B88-48EC-9976-F9335160E05F}"
+                  SQLTask:SqlStatementSource="exec dbo.usp_PopulateFactSalesAnalysis" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load_Fact\Exec usp_populateFactSalesTargets"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{9B3473CB-77FC-43C7-B51F-25C140020695}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Exec usp_populateFactSalesTargets">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Load_Fact\Exec usp_populateFactSalesTargets\load_FactSalesTargets"
+              DTS:CreationName="Microsoft.ExecuteSQLTask"
+              DTS:Description="Execute SQL Task"
+              DTS:DTSID="{7fd87dc7-d1c4-4213-8a73-78e7638de53b}"
+              DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="load_FactSalesTargets"
+              DTS:ThreadHint="1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <SQLTask:SqlTaskData
+                  SQLTask:Connection="{D4ACC9B8-3B88-48EC-9976-F9335160E05F}"
+                  SQLTask:SqlStatementSource="exec dbo.usp_populateFactSalesTargets" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+        </DTS:Executable>
+      </DTS:Executables>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{22366000-F998-44D7-A614-95846B093589}"
-      DTS:From="Package\load_dimDate"
+      DTS:DTSID="{365E6275-61B3-4CB5-BE1B-F1518B40FAF4}"
+      DTS:From="Package\Load Dim"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\load_dimGeography" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
-      DTS:CreationName=""
-      DTS:DTSID="{B9DFF8CB-C811-4C4E-9A57-861A07A6D715}"
-      DTS:From="Package\load_dimGeography"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1"
-      DTS:To="Package\load_dimCustomer" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
-      DTS:CreationName=""
-      DTS:DTSID="{60F35259-DA98-41E4-8266-041A13C993CE}"
-      DTS:From="Package\load_dimCustomer"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 2"
-      DTS:To="Package\load_dimProduct" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
-      DTS:CreationName=""
-      DTS:DTSID="{AE56BC36-9C8D-43FB-9DB6-AE518106BE21}"
-      DTS:From="Package\load_dimProduct"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 3"
-      DTS:To="Package\load_factSalesAnalysis" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
-      DTS:CreationName=""
-      DTS:DTSID="{CD49849B-5698-48F8-9DC5-ACC8FDD2CBAF}"
-      DTS:From="Package\load_factSalesAnalysis"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 4"
-      DTS:To="Package\load_factSaleTargets" />
+      DTS:To="Package\Load_Fact" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -183,131 +247,111 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="168,42.6666666666667"
-          Id="Package\load_dimCustomer"
-          TopLeft="218.124990249053,193.699990763665" />
+          Size="167.333333333334,42.6666666666667"
+          Id="Package\Load Dim\Exec_usp_PopulateDimDate\load_DimDate"
+          TopLeft="23.4583289468041,15.2333281882606" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="257.333333333334,78"
+          Size="257.333333333334,120.666666666667"
+          Id="Package\Load Dim\Exec_usp_PopulateDimDate"
+          TopLeft="21.9166643756132,7.0666636912029" />
         <NodeLayout
-          Size="144,42.6666666666667"
-          Id="Package\load_dimDate"
-          TopLeft="226.874989857898,28.5999986362458" />
+          Size="184.666666666667,42.6666666666667"
+          Id="Package\Load Dim\Exec_usp_PopulateDimGeography\load_DimGeography"
+          TopLeft="30.7499946914615,7.88332567771306" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="262,105.333333333334"
+          Size="262,148"
+          Id="Package\Load Dim\Exec_usp_PopulateDimGeography"
+          TopLeft="17.5416645711909,132.233331287702" />
         <NodeLayout
-          Size="173.333333333334,42.6666666666667"
-          Id="Package\load_dimGeography"
-          TopLeft="214.999990388752,110.49999473095" />
+          Size="169.333333333334,42.6666666666667"
+          Id="Package\Load Dim\Exec_usp_PopulateDimCustomer\load_DimCustomer"
+          TopLeft="38.0833271307252,19.1666576782865" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="247.333333333334,116.666666666667"
+          Size="247.333333333334,160"
+          Id="Package\Load Dim\Exec_usp_PopulateDimCustomer"
+          TopLeft="18.6249994132668,241.516662048499" />
         <NodeLayout
-          Size="158.666666666667,42.6666666666667"
-          Id="Package\load_dimProduct"
-          TopLeft="215.416657036791,268.26665517807" />
+          Size="160,42.6666666666667"
+          Id="Package\Load Dim\Exec_usp_PopulateDimProduct\load_DimProduct"
+          TopLeft="31.9166616934044,14.7833273514114" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="245.333333333334,112.666666666667"
+          Size="245.333333333334,155.333333333334"
+          Id="Package\Load Dim\Exec_usp_PopulateDimProduct"
+          TopLeft="18.1666645432513,368.849994142056" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="297.333333333334,558"
+          Size="297.333333333334,601.333333333334"
+          Id="Package\Load Dim"
+          TopLeft="69.9999968707564,25.3499987912178" />
+        <NodeLayout
+          Size="186.666666666667,42.6666666666667"
+          Id="Package\Load_Fact\Exec usp_PopulateFactSalesAnalysis\load_FactSalesAnalysis"
+          TopLeft="39.6249796319759,12.2666634432476" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="287.333333333334,112"
+          Size="287.333333333334,154.666666666667"
+          Id="Package\Load_Fact\Exec usp_PopulateFactSalesAnalysis"
+          TopLeft="24.7916457398491,13.0666636912029" />
         <NodeLayout
           Size="185.333333333334,42.6666666666667"
-          Id="Package\load_factSalesAnalysis"
-          TopLeft="204.861101953106,344.925913046025" />
-        <NodeLayout
-          Size="177.333333333334,42.6666666666667"
-          Id="Package\load_factSaleTargets"
-          TopLeft="212.49999050051,423.35183879976" />
+          Id="Package\Load_Fact\Exec usp_populateFactSalesTargets\load_FactSalesTargets"
+          TopLeft="20.7916497631626,20.5666627613705" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="286.666666666667,118"
+          Size="286.666666666667,161.333333333334"
+          Id="Package\Load_Fact\Exec usp_populateFactSalesTargets"
+          TopLeft="26.6249834317718,178.966661025683" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="338,396"
+          Size="338,438.666666666667"
+          Id="Package\Load_Fact"
+          TopLeft="406.291648533817,27.0666698900858" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="300.270823456658,71.2666653029125">
+          TopLeft="367.33333020409,326.016665457885">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.2333294280372"
+              EndConnector="38.9583183297269,-79.6166622344654"
               Start="0,0"
-              End="0,31.7333294280372">
+              End="31.4583183297269,-79.6166622344654">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.7333294280372" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="301.895823652236,153.166661397616">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40.5333293660487"
-              Start="0,0"
-              End="0,33.0333293660487">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
+                    End="15.4791591648634,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="15.4791591648634,0"
+                    Point2="19.4791591648634,0"
+                    Point3="19.4791591648634,-4" />
                   <mssgle:LineSegment
-                    End="0,33.0333293660487" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="298.437490309589,236.366657430332">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31.8999977477383"
-              Start="0,0"
-              End="0,24.3999977477383">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
+                    End="19.4791591648634,-75.6166622344654" />
+                  <mssgle:CubicBezierSegment
+                    Point1="19.4791591648634,-75.6166622344654"
+                    Point2="19.4791591648634,-79.6166622344654"
+                    Point3="23.4791591648634,-79.6166622344654" />
                   <mssgle:LineSegment
-                    End="0,24.3999977477383" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="296.138879494949,310.933321844737">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,33.9925912012883"
-              Start="0,0"
-              End="0,26.4925912012883">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.4925912012883" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="299.347212893475,387.592579712692">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,35.7592590870683"
-              Start="0,0"
-              End="0,28.2592590870683">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.2592590870683" />
+                    End="31.4583183297269,-79.6166622344654" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
