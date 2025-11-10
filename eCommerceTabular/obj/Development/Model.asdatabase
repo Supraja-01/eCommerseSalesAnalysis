@@ -19,34 +19,40 @@
     ],
     "tables": [
       {
-        "name": "vw_categories",
+        "name": "DimCustomer",
         "columns": [
           {
-            "name": "productkey",
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "CustomerName",
             "dataType": "string",
-            "sourceColumn": "productkey",
+            "sourceColumn": "CustomerName",
             "sourceProviderType": "Char"
           },
           {
-            "name": "category",
+            "name": "state",
             "dataType": "string",
-            "sourceColumn": "category",
+            "sourceColumn": "state",
             "sourceProviderType": "Char"
           },
           {
-            "name": "subCategory",
+            "name": "city",
             "dataType": "string",
-            "sourceColumn": "subCategory",
+            "sourceColumn": "city",
             "sourceProviderType": "Char"
           }
         ],
         "partitions": [
           {
-            "name": "vw_categories",
+            "name": "DimCustomer",
             "dataView": "full",
             "source": {
               "type": "query",
-              "query": " \t\t\t\tSELECT [dbo].[vw_categories].*   FROM [dbo].[vw_categories] ",
+              "query": " \t\t\t\tSELECT [dbo].[vw_DimCustomer].*   FROM [dbo].[vw_DimCustomer] ",
               "dataSource": "SqlServer RC-08029 eCommerceSalesDM"
             }
           }
@@ -54,11 +60,11 @@
         "annotations": [
           {
             "name": "_TM_ExtProp_QueryDefinition",
-            "value": " \t\t\t\tSELECT [dbo].[vw_categories].*   FROM [dbo].[vw_categories] "
+            "value": " \t\t\t\tSELECT [dbo].[vw_DimCustomer].*   FROM [dbo].[vw_DimCustomer] "
           },
           {
             "name": "_TM_ExtProp_DbTableName",
-            "value": "vw_categories"
+            "value": "vw_DimCustomer"
           },
           {
             "name": "_TM_ExtProp_DbSchemaName",
@@ -67,7 +73,7 @@
         ]
       },
       {
-        "name": "vw_date",
+        "name": "DimDate",
         "columns": [
           {
             "name": "datekey",
@@ -96,11 +102,11 @@
         ],
         "partitions": [
           {
-            "name": "vw_date",
+            "name": "DimDate",
             "dataView": "full",
             "source": {
               "type": "query",
-              "query": " \t\t\t\tSELECT [dbo].[vw_date].*   FROM [dbo].[vw_date] ",
+              "query": " \t\t\t\tSELECT [dbo].[vw_DimDate].*   FROM [dbo].[vw_DimDate] ",
               "dataSource": "SqlServer RC-08029 eCommerceSalesDM"
             }
           }
@@ -108,11 +114,11 @@
         "annotations": [
           {
             "name": "_TM_ExtProp_QueryDefinition",
-            "value": " \t\t\t\tSELECT [dbo].[vw_date].*   FROM [dbo].[vw_date] "
+            "value": " \t\t\t\tSELECT [dbo].[vw_DimDate].*   FROM [dbo].[vw_DimDate] "
           },
           {
             "name": "_TM_ExtProp_DbTableName",
-            "value": "vw_date"
+            "value": "vw_DimDate"
           },
           {
             "name": "_TM_ExtProp_DbSchemaName",
@@ -121,13 +127,13 @@
         ]
       },
       {
-        "name": "vw_geography",
+        "name": "DimGeography",
         "columns": [
           {
             "name": "geographykey",
-            "dataType": "string",
+            "dataType": "int64",
             "sourceColumn": "geographykey",
-            "sourceProviderType": "Char"
+            "sourceProviderType": "Integer"
           },
           {
             "name": "state",
@@ -144,11 +150,11 @@
         ],
         "partitions": [
           {
-            "name": "vw_geography",
+            "name": "DimGeography",
             "dataView": "full",
             "source": {
               "type": "query",
-              "query": " \t\t\t\tSELECT [dbo].[vw_geography].*   FROM [dbo].[vw_geography] ",
+              "query": " \t\t\t\tSELECT [dbo].[vw_DimGeography].*   FROM [dbo].[vw_DimGeography] ",
               "dataSource": "SqlServer RC-08029 eCommerceSalesDM"
             }
           }
@@ -156,11 +162,11 @@
         "annotations": [
           {
             "name": "_TM_ExtProp_QueryDefinition",
-            "value": " \t\t\t\tSELECT [dbo].[vw_geography].*   FROM [dbo].[vw_geography] "
+            "value": " \t\t\t\tSELECT [dbo].[vw_DimGeography].*   FROM [dbo].[vw_DimGeography] "
           },
           {
             "name": "_TM_ExtProp_DbTableName",
-            "value": "vw_geography"
+            "value": "vw_DimGeography"
           },
           {
             "name": "_TM_ExtProp_DbSchemaName",
@@ -169,25 +175,73 @@
         ]
       },
       {
-        "name": "vw_Sales",
+        "name": "DimProduct",
+        "columns": [
+          {
+            "name": "productkey",
+            "dataType": "int64",
+            "sourceColumn": "productkey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "category",
+            "dataType": "string",
+            "sourceColumn": "category",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "subCategory",
+            "dataType": "string",
+            "sourceColumn": "subCategory",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimProduct",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[vw_DimProduct].*   FROM [dbo].[vw_DimProduct] ",
+              "dataSource": "SqlServer RC-08029 eCommerceSalesDM"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[vw_DimProduct].*   FROM [dbo].[vw_DimProduct] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "vw_DimProduct"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "FactSalesAnalysis",
         "columns": [
           {
             "name": "salekey",
-            "dataType": "string",
+            "dataType": "int64",
             "sourceColumn": "salekey",
-            "sourceProviderType": "Char"
+            "sourceProviderType": "Integer"
           },
           {
             "name": "geographykey",
-            "dataType": "string",
+            "dataType": "int64",
             "sourceColumn": "geographykey",
-            "sourceProviderType": "Char"
+            "sourceProviderType": "Integer"
           },
           {
             "name": "productkey",
-            "dataType": "string",
+            "dataType": "int64",
             "sourceColumn": "productkey",
-            "sourceProviderType": "Char"
+            "sourceProviderType": "Integer"
           },
           {
             "name": "datekey",
@@ -216,11 +270,11 @@
         ],
         "partitions": [
           {
-            "name": "vw_Sales",
+            "name": "FactSalesAnalysis",
             "dataView": "full",
             "source": {
               "type": "query",
-              "query": " \t\t\t\tSELECT [dbo].[vw_Sales].*   FROM [dbo].[vw_Sales] ",
+              "query": " \t\t\t\tSELECT [dbo].[vw_FactSalesAnalysis].*   FROM [dbo].[vw_FactSalesAnalysis] ",
               "dataSource": "SqlServer RC-08029 eCommerceSalesDM"
             }
           }
@@ -228,25 +282,25 @@
         "measures": [
           {
             "name": "Total Sale Amount",
-            "expression": " SUM(vw_Sales[TotalAmount])"
+            "expression": " SUM(FactSalesAnalysis[TotalAmount])"
           },
           {
             "name": "Total Sale Profit",
-            "expression": " SUM(vw_Sales[TotalProfit])"
+            "expression": " SUM(FactSalesAnalysis[TotalProfit])"
           },
           {
             "name": "Total Sale Quantity",
-            "expression": " SUM(vw_Sales[TotalQuantity])"
+            "expression": " SUM(FactSalesAnalysis[TotalQuantity])"
           }
         ],
         "annotations": [
           {
             "name": "_TM_ExtProp_QueryDefinition",
-            "value": " \t\t\t\tSELECT [dbo].[vw_Sales].*   FROM [dbo].[vw_Sales] "
+            "value": " \t\t\t\tSELECT [dbo].[vw_FactSalesAnalysis].*   FROM [dbo].[vw_FactSalesAnalysis] "
           },
           {
             "name": "_TM_ExtProp_DbTableName",
-            "value": "vw_Sales"
+            "value": "vw_FactSalesAnalysis"
           },
           {
             "name": "_TM_ExtProp_DbSchemaName",
@@ -255,7 +309,7 @@
         ]
       },
       {
-        "name": "vw_SaleTarget",
+        "name": "FactSalesTargets",
         "columns": [
           {
             "name": "datekey",
@@ -284,23 +338,50 @@
         ],
         "partitions": [
           {
-            "name": "vw_SaleTarget",
+            "name": "FactSalesTargets",
             "dataView": "full",
             "source": {
               "type": "query",
-              "query": " \t\t\t\tSELECT [dbo].[vw_SaleTarget].*   FROM [dbo].[vw_SaleTarget] ",
+              "query": " \t\t\t\tSELECT [dbo].[vw_FactSalesTargets].*   FROM [dbo].[vw_FactSalesTargets] ",
               "dataSource": "SqlServer RC-08029 eCommerceSalesDM"
             }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Total Target",
+            "expression": " SUM(FactSalesTargets[totalTarget])"
+          },
+          {
+            "name": "Achievement %",
+            "expression": [
+              "",
+              "FORMAT(",
+              "    DIVIDE(",
+              "        [Total Sale Amount],",
+              "        [Total Target],",
+              "        0",
+              "    ),",
+              "    \"0.0%\"",
+              ")"
+            ]
+          },
+          {
+            "name": "Target Balence",
+            "expression": [
+              " ",
+              "[Total Target] - [Total Sale Amount]"
+            ]
           }
         ],
         "annotations": [
           {
             "name": "_TM_ExtProp_QueryDefinition",
-            "value": " \t\t\t\tSELECT [dbo].[vw_SaleTarget].*   FROM [dbo].[vw_SaleTarget] "
+            "value": " \t\t\t\tSELECT [dbo].[vw_FactSalesTargets].*   FROM [dbo].[vw_FactSalesTargets] "
           },
           {
             "name": "_TM_ExtProp_DbTableName",
-            "value": "vw_SaleTarget"
+            "value": "vw_FactSalesTargets"
           },
           {
             "name": "_TM_ExtProp_DbSchemaName",
@@ -311,32 +392,32 @@
     ],
     "relationships": [
       {
-        "name": "378886c1-d8f9-4c42-9431-c3e854fa7fdb",
-        "fromTable": "vw_Sales",
+        "name": "b8d032af-7758-4805-bc4c-19f338c1b396",
+        "fromTable": "FactSalesAnalysis",
+        "fromColumn": "datekey",
+        "toTable": "DimDate",
+        "toColumn": "datekey"
+      },
+      {
+        "name": "fd9c35e4-dc5f-47bf-9e52-df01821b8d0c",
+        "fromTable": "FactSalesAnalysis",
         "fromColumn": "productkey",
-        "toTable": "vw_categories",
+        "toTable": "DimProduct",
         "toColumn": "productkey"
       },
       {
-        "name": "082c6fc5-9dad-4251-a9e3-4f5ecaa73c05",
-        "fromTable": "vw_Sales",
+        "name": "a1774b22-0617-42f9-9d3e-841fe6fb5ae7",
+        "fromTable": "FactSalesAnalysis",
         "fromColumn": "geographykey",
-        "toTable": "vw_geography",
+        "toTable": "DimGeography",
         "toColumn": "geographykey"
       },
       {
-        "name": "b9c22415-6987-44f4-a596-c2e8908a5137",
-        "fromTable": "vw_SaleTarget",
-        "fromColumn": "Salekey",
-        "toTable": "vw_Sales",
-        "toColumn": "salekey"
-      },
-      {
-        "name": "77c07fb4-af0d-433e-8936-c297ebfec6ae",
-        "fromTable": "vw_Sales",
-        "fromColumn": "datekey",
-        "toTable": "vw_date",
-        "toColumn": "datekey"
+        "name": "6ee6bdfd-4356-4503-92dd-43ac11e285e8",
+        "fromTable": "FactSalesAnalysis",
+        "fromColumn": "salekey",
+        "toTable": "FactSalesTargets",
+        "toColumn": "Salekey"
       }
     ],
     "annotations": [
